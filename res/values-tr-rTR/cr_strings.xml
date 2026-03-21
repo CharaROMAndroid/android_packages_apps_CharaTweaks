@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroid Ayarları</string>
     <string name="crdroid_settings_summary">Çeşitli kişiselleştirmeler</string>
     <string name="reset_settings_title">Ayarları sıfırla</string>
-    <string name="reset_settings_message">Bu mevcut kullanıcı için çoğu crdroid ayarlarını varsayılan değerlerine sıfırlar. Devam etmek ister misin?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Tuşlar</string>
     <string name="lockscreen_title">Kilit ekranı</string>
@@ -70,17 +68,11 @@
     <string name="changelog_crdroid_summary">Yüklü ROM\'daki değişiklikleri görüntüleyin</string>
     <string name="changelog_crdroid_error">Değişiklikler yüklenemiyor</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">crDroid hakkında</string>
     <string name="about_device_name">Cihaz</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">crDroid\'i paylaş</string>
-    <string name="share_crdroid_summary">Başkalarına crDroid hakkında bilgi verin</string>
-    <string name="share_message">Cihazınız için #crDroidAndroid\'in mevcut olup olmadığını kontrol edin @ https://crdroid.net/</string>
-    <string name="share_chooser_title">crDroid\'i paylaş</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Kaynak kodumuzu görüntüleyin</string>
-    <string name="crdroid_telegram_title">crDroid topluluğu</string>
     <string name="crdroid_telegram_summary">Biz de telegramdayız. Bize katılın!</string>
     <string name="crdroid_telegram_channel_title">Güncelleme kanalı</string>
     <string name="crdroid_telegram_channel_summary">Telegram\'daki yeni yapılardan haberdar olun</string>
@@ -93,13 +85,11 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Bizi destekle</string>
     <string name="crdroid_donate_preference_summary">Daha fazla gelişmeyi desteklemek için bağış yapın</string>
-    <string name="crdroid_donate_title">crDroid sizin yardımınıza ihtiyaç duyuyor!</string>
     <string name="crdroid_donate_notification_text">Daha fazla bilgi edinmek için dokunun</string>
     <string name="crdroid_donate_message">crDroid Android, web sitesini çevrimiçi tutmak, derleme sunucularımızı çalışır durumda tutmak ve cihazınız için yüksek kaliteli derlemeler sunmak için yardımınıza ihtiyaç duyan açık kaynaklı bir projedir.\n\n
 Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olur. Bu mesajı kapatabilirsiniz, ancak desteğiniz bizim için çok önemlidir.</string>
     <string name="crdroid_donate_button">Şimdi bağış yap</string>
     <string name="crdroid_later_button">Belki gelecek ay</string>
-    <string name="crdroid_channel_name">crDroid bildirimleri</string>
     <string name="crdroid_channel_desc">Projeye özgü bildirimler</string>
     <string name="crdroid_donate_still_needed">Bize bu ay hâlâ %,d € lazım. Hedefimize ulaşmamızda yardımcı olun.</string>
     <string name="crdroid_donate_thank_you">Bu ayki tüm bağışlar için minnettarız! Bize hâlâ katkıda bulunup bir fark yaratabilirsiniz.</string>
@@ -523,7 +513,6 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="qs_footer_services_icon_title">Çalışan hizmetler kısayolu</string>
     <string name="qs_footer_settings_icon_title">Ayarlar kısayolu</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid yasal</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Parlaklık kaydırıcısı</string>
     <string name="qs_show_brightness_slider_title">Parlaklık kaydırıcısı</string>
@@ -881,7 +870,6 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="status_bar_logo_position_title">Logo konumu</string>
     <string name="status_bar_logo_style_title">Logo stili</string>
     <string name="status_bar_logo_style_summary">Gösterilecek özel logoyu seç</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Uzaylı</string>

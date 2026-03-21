@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroid 設定</string>
     <string name="crdroid_settings_summary">各項設定，一次滿足</string>
     <string name="reset_settings_title">恢復默認設置</string>
-    <string name="reset_settings_message">這會將目前使用者的 crDroid 設定重設為預設值。您要繼續嗎？</string>
     <!-- Personalization Categories -->
     <string name="button_title">按鍵</string>
     <string name="lockscreen_title">鎖定螢幕</string>
@@ -70,17 +68,11 @@
     <string name="changelog_crdroid_summary">查看此 ROM 的更新紀錄</string>
     <string name="changelog_crdroid_error">無法載入更新日誌</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">關於 crDroid</string>
     <string name="about_device_name">裝置</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">分享 crDroid</string>
-    <string name="share_crdroid_summary">讓別人知道 crDroid</string>
-    <string name="share_message">在 https://crdroid.net/ 看看 #crDroid Android</string>
-    <string name="share_chooser_title">分享 crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">我們愛開源，來看看吧</string>
-    <string name="crdroid_telegram_title">crDroid 社群</string>
     <string name="crdroid_telegram_summary">我們也在 Telegram 上，快加入我們！</string>
     <string name="crdroid_telegram_channel_title">更新通道</string>
     <string name="crdroid_telegram_channel_summary">在 Telegram 上取得新版本通知</string>
@@ -93,12 +85,9 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">贊助我們</string>
     <string name="crdroid_donate_preference_summary">捐贈以支持開放原始碼開發。</string>
-    <string name="crdroid_donate_title">crDroid 需要你的支持！</string>
     <string name="crdroid_donate_notification_text">點擊瞭解更多</string>
-    <string name="crdroid_donate_message">crDroid Android 是一個開源專案，需要你的幫助來維持網站線上運作、建置伺服器的運行，並為你的裝置提供高品質的版本。\n\n 一點小額捐助就能讓這個專案持續運作並不斷改進。你可以關閉此訊息，但你的支持對我們意義重大。</string>
     <string name="crdroid_donate_button">馬上贊助</string>
     <string name="crdroid_later_button">下個月再說吧</string>
-    <string name="crdroid_channel_name">crDroid 通知</string>
     <string name="crdroid_channel_desc">專案特定通知</string>
     <string name="crdroid_donate_still_needed">本月我們仍需 €%,d。幫助我們達成目標。</string>
     <string name="crdroid_donate_thank_you">我們感謝本月的所有捐助。你仍然可以支持，讓改變發生！</string>
@@ -521,7 +510,6 @@
     <string name="qs_footer_services_icon_title">正在運作中的服務圖示</string>
     <string name="qs_footer_settings_icon_title">設定圖示</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid 條款</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">亮度控制條</string>
     <string name="qs_show_brightness_slider_title">亮度控制條</string>

@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">הגדרות crDroid</string>
     <string name="crdroid_settings_summary">לפתוח את הטוב</string>
     <string name="reset_settings_title">איפוס הגדרות</string>
-    <string name="reset_settings_message">הגדרה זו תאפס את רוב הגדרות crDroid לערכי ברירת המחדל, להמשיך?</string>
     <!-- Personalization Categories -->
     <string name="button_title">מקשים</string>
     <string name="lockscreen_title">מסך נעילה</string>
@@ -70,17 +68,11 @@
     <string name="changelog_crdroid_summary">ראה שינויים ברום שהותקן</string>
     <string name="changelog_crdroid_error">טעינת יומן השינויים נכשלה</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">אודות crDroid</string>
     <string name="about_device_name">מכשיר</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">שתף crDroid</string>
-    <string name="share_crdroid_summary">עזור לאנשים אחרים לדעת אודות crDroid</string>
-    <string name="share_message">בדוק האם crDroidAndroid# זמין למכשיר שלך https://crdroid.net/</string>
-    <string name="share_chooser_title">שתף crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">אנחנו אוהבים מקור פתוח, בדוק אותנו</string>
-    <string name="crdroid_telegram_title">קהילת crDroid</string>
     <string name="crdroid_telegram_summary">אנחנו גם בטלגרם, תצטרף אלינו!</string>
     <string name="crdroid_telegram_channel_title">ערוץ עדכונים</string>
     <string name="crdroid_telegram_channel_summary">קבל הודעה בטלגרם אודות עדכונים חדשים</string>
@@ -93,13 +85,11 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">תמוך בנו</string>
     <string name="crdroid_donate_preference_summary">תמוך בנו כדי לאפשר המשך פיתוח עתידי</string>
-    <string name="crdroid_donate_title">crDroid זקוק לעזרתך!</string>
     <string name="crdroid_donate_notification_text">געו כדי ללמוד עוד</string>
     <string name="crdroid_donate_message">crDroid Android הוא פרוייקט קוד פתוחהזקוק לעזרתך כדי להמשיך ולהחזיק את האתר פעיל, את שרתי הגירסאות \"באוויר\" ולספק גרסאות באיכות גבוהה למכשיר שלך.\n\n
 תרומה קטנה עוזרת לשמור את הפרוייקט חי ומשתפר. ניתן לסגור הודעה זו, אך תמיכתך משמעותית מאד עבורינו.</string>
     <string name="crdroid_donate_button">תרומה כעת</string>
     <string name="crdroid_later_button">Maybe next month</string>
-    <string name="crdroid_channel_name">התראות crDroid</string>
     <string name="crdroid_channel_desc">התראות פרטניות לפרוייקט</string>
     <string name="crdroid_donate_still_needed">אנחנו עדיין זקוקים ל- €%,d החודש. עיזרו לנו להגיע ליעד.</string>
     <string name="crdroid_donate_thank_you">אנחנו מודים ומעריכים את כל התרומות שניתנו החודש. באפשרותכם עדיין לתרום ולהשפיע!</string>
@@ -525,7 +515,6 @@
     <string name="qs_footer_services_icon_title">קיצור דרך להפעלת שירותים</string>
     <string name="qs_footer_settings_icon_title">קיצור דרך להגדרות</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">חוקי crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">סרגל הבהירות</string>
     <string name="qs_show_brightness_slider_title">מחוון בהירות</string>
@@ -885,7 +874,6 @@
     <string name="status_bar_logo_position_title">מיקום הסמל</string>
     <string name="status_bar_logo_style_title">סגנון הסמל</string>
     <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">אנדרואיד</string>
     <string name="status_bar_logo_style_adidas">אדידס</string>
     <string name="status_bar_logo_style_alien">חייזר</string>
