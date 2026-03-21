@@ -20,19 +20,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/ongoing_progress_settings_title" >
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <com.chararom.settings.preferences.SystemSettingSwitchPreference
         android:key="ongoing_action_chip"
         android:title="@string/ongoing_action_chip_title"
         android:summary="@string/ongoing_action_chip_summary"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <com.chararom.settings.preferences.SystemSettingSwitchPreference
         android:key="ongoing_media_progress"
         android:title="@string/ongoing_media_progress_title"
         android:summary="@string/ongoing_media_progress_summary"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingListPreference
+    <com.chararom.settings.preferences.SystemSettingListPreference
         android:key="ongoing_chip_color_mode"
         android:title="@string/ongoing_chip_color_mode_title"
         android:summary="%s"
@@ -41,7 +41,7 @@
         android:defaultValue="0"
         android:dependency="ongoing_media_progress" />
 
-     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+     <com.chararom.settings.preferences.SystemSettingSwitchPreference
         android:key="ongoing_compact_mode"
         android:title="@string/ongoing_compact_mode_title"
         android:summary="@string/ongoing_compact_mode_summary"

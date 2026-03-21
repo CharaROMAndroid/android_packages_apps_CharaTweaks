@@ -32,7 +32,7 @@
     </Preference>
 
     <!-- Google Play Integrity -->
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <com.chararom.settings.preferences.SecureSettingSwitchPreference
         android:key="pi_enable_spoof"
         android:icon="@drawable/ic_google"
         android:title="@string/pi_spoof_title"
@@ -40,7 +40,7 @@
         android:defaultValue="true" />
 
     <!-- Vbmeta hash attestation -->
-    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
+    <com.chararom.settings.preferences.SystemPropertySwitchPreference
         android:key="persist.sys.vbmeta.update"
         android:icon="@drawable/ic_hash"
         android:title="@string/vbmeta_attestation_title"
@@ -48,27 +48,27 @@
         android:defaultValue="true" />
 
     <!-- Keybox Data -->
-    <com.crdroid.settings.preferences.KeyboxDataPreference
+    <com.chararom.settings.preferences.KeyboxDataPreference
         android:key="keybox_data_setting"
         android:icon="@drawable/ic_key"
         android:title="@string/keybox_data_title"/>
 
     <!-- Block attestation even with Keybox Data -->
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <com.chararom.settings.preferences.SecureSettingSwitchPreference
         android:key="pi_gms_cert_chain"
         android:icon="@drawable/ic_key"
         android:title="@string/pi_gmscertchain_title"
         android:summary="@string/pi_gmscertchain_summary" />
 
     <!-- Unlock FPS for specific games -->
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <com.chararom.settings.preferences.SecureSettingSwitchPreference
         android:key="pi_games_spoof"
         android:icon="@drawable/ic_backup"
         android:title="@string/use_games_spoof_title"
         android:summary="@string/use_games_spoof_summary" />
 
     <!-- Unlimited google photos storage -->
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <com.chararom.settings.preferences.SecureSettingSwitchPreference
         android:key="pi_photos_spoof"
         android:icon="@drawable/ic_backup"
         android:title="@string/use_photos_spoof_title"
@@ -76,7 +76,7 @@
         android:defaultValue="true" />
 
     <!-- Netflix -->
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <com.chararom.settings.preferences.SecureSettingSwitchPreference
         android:key="pi_netflix_spoof"
         android:icon="@drawable/ic_netflix"
         android:title="@string/netflix_spoof_title"
@@ -84,7 +84,7 @@
         android:defaultValue="false" />
 
     <!-- Application downgrade -->
-    <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
+    <com.chararom.settings.preferences.GlobalSettingSwitchPreference
         android:key="pm_downgrade_allowed"
         android:icon="@drawable/ic_arrow_down_box"
         android:title="@string/app_downgrade_title"
@@ -120,10 +120,10 @@
         android:icon="@drawable/ic_remote"
         android:title="@string/sensor_block_title"
         android:summary="@string/sensor_block_summary"
-        android:fragment="com.crdroid.settings.fragments.misc.SensorBlock"/>
+        android:fragment="com.chararom.settings.fragments.misc.SensorBlock"/>
 
     <!-- Pocket Judge -->
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <com.chararom.settings.preferences.SystemSettingSwitchPreference
         android:key="pocket_judge"
         android:icon="@drawable/ic_pocket"
         android:title="@string/pocket_judge_title"
@@ -131,7 +131,7 @@
         android:defaultValue="false" />
 
     <!-- Rotation button -->
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <com.chararom.settings.preferences.SystemSettingSwitchPreference
         android:key="enable_rotation_button"
         android:icon="@drawable/ic_rotation"
         android:title="@string/floating_rotation_button_title"
