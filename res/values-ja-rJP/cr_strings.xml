@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2016-2026 crDroid Android Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
+<?xml version='1.0' encoding='utf-8'?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
     <string name="crdroid_settings_title">crDroid の設定</string>
@@ -438,8 +423,8 @@
     <string name="battery_bar_blend_color_title">色のブレンド</string>
     <string name="battery_bar_blend_color_summary">バッテリー残量に応じて満充電 / 残量低下時の色をブレンドします</string>
     <string name="battery_bar_blend_color_reverse_title">色の順番を逆転させる</string>
-    <string name="battery_bar_blend_color_reverse_summary_off">満充電 &#8594; 残量低下: 赤 &#8592; 緑 &#8592; 青 &#8592; 赤</string>
-    <string name="battery_bar_blend_color_reverse_summary_on">満充電 &#8594; 残量低下: 赤 &#8594; 緑 &#8594; 青 &#8594; 赤</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">満充電 → 残量低下: 赤 ← 緑 ← 青 ← 赤</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">満充電 → 残量低下: 赤 → 緑 → 青 → 赤</string>
     <!-- Quick setting categories -->
     <string name="qs_misc_category">その他</string>
     <string name="qs_footer_category">フッター</string>
@@ -1451,4 +1436,6 @@
     <string name="reading_engine_mode_title">コンフォート（読書モード）</string>
     <string name="display_engine_default">デフォルト</string>
     <string name="display_engine_mode_footer_text">SonyのBravia/X-Reality エンジンに着想を得たディスプレイエンジンは、明るさと彩度を向上させる「鮮やか」、ディティールと色の精度を向上させる「X-Reality」、より広いカラーレンジを実現する「トリルミネート」を搭載しています。</string>
-</resources>
+<string name="screen_on_memory_reclaim_title">画面点灯時のメモリ解放</string>
+    <string name="screen_on_memory_reclaim_summary">画面がオンになった直後に、キャッシュされたバックグラウンドアプリを終了してメモリを解放します</string>
+    </resources>
