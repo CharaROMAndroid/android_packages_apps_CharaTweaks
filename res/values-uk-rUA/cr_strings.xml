@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">Налаштування crDroid</string>
     <string name="crdroid_settings_summary">Додаткові налаштування</string>
     <string name="reset_settings_title">Скинути налаштування</string>
-    <string name="reset_settings_message">Буде здійснено скидання більшості параметрів crdroid до їх значень за замовчуванням для поточного користувача. Чи хотіли б Ви продовжити?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Кнопки</string>
     <string name="lockscreen_title">Блокування екрану</string>
@@ -70,17 +68,11 @@
     <string name="changelog_crdroid_summary">Переглянути список змін встановленого ПЗ</string>
     <string name="changelog_crdroid_error">Не вдається завантажити список змін</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">Про crDroid</string>
     <string name="about_device_name">Пристрій</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">Поділитися crDroid</string>
-    <string name="share_crdroid_summary">Нехай інші знають про crDroid</string>
-    <string name="share_message">Перевірте, чи доступний #crDroidAndroid для Вашого пристрою @ https://crdroid.net/</string>
-    <string name="share_chooser_title">Поділитися crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Ми любимо відкритий вихідний код, перевірте нас</string>
-    <string name="crdroid_telegram_title">crDroid спільнота</string>
     <string name="crdroid_telegram_summary">Ми також є в Telegram. Приєднуйтесь!</string>
     <string name="crdroid_telegram_channel_title">Канал оновлень</string>
     <string name="crdroid_telegram_channel_summary">Отримувати сповіщення про нові збірки в Telegram</string>
@@ -93,13 +85,11 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Підтримати нас</string>
     <string name="crdroid_donate_preference_summary">Пожертвуйте для підтримки подальшого розвитку</string>
-    <string name="crdroid_donate_title">crDroid потребує вашої допомоги!</string>
     <string name="crdroid_donate_notification_text">Торкніться, щоб дізнатись більше</string>
     <string name="crdroid_donate_message">crDroid Android є проектом з відкритим вихідним кодом, який потребує вашої допомоги, щоб зберігати веб-сайт. наші сервери збірки запущені та забезпечують якісні збірки для вашого пристрою.\n\n
 Невелика пожертва допомагає зберегти цей проект живим та поліпшити. Ви можете звільнити це повідомлення, але ваша підтримка багато для нас значить.</string>
     <string name="crdroid_donate_button">Пожертвувати зараз</string>
     <string name="crdroid_later_button">Можливо наступного місяця</string>
-    <string name="crdroid_channel_name">crDroid сповіщення</string>
     <string name="crdroid_channel_desc">Конкретні сповіщення в проєкті</string>
     <string name="crdroid_donate_still_needed">Нам все ще потрібно €%,d у цьому місяці. Допоможіть нам досягти поставленої мети.</string>
     <string name="crdroid_donate_thank_you">Ми цінуємо всі пожертвування за цей місяць. Ви все ще можете внести свій внесок!</string>
@@ -525,7 +515,6 @@
     <string name="qs_footer_services_icon_title">Піктограма запущених служб</string>
     <string name="qs_footer_settings_icon_title">Піктограма налаштувань</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">Політика конфіденційності crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Повзунок яскравості</string>
     <string name="qs_show_brightness_slider_title">Повзунок яскравості</string>
@@ -885,7 +874,6 @@
     <string name="status_bar_logo_position_title">Позиція логотипу</string>
     <string name="status_bar_logo_style_title">Стиль логотипу</string>
     <string name="status_bar_logo_style_summary">Виберіть користувацький логотип для відображення</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Андроїд</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Чужий</string>

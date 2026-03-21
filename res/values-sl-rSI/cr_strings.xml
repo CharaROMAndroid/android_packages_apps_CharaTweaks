@@ -16,7 +16,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroid nastavitve</string>
     <string name="crdroid_settings_summary">Odprte dobrote</string>
     <string name="reset_settings_title">Ponastavi nastavitve</string>
     <string name="reset_settings_message">To bo ponastavilo večino nastavitev na njihove privzete vrednosti za trenutnega uporabnika. Ali želite nadaljevati?</string>
@@ -70,17 +69,11 @@
     <string name="changelog_crdroid_summary">Pokaži spremembe v nameščenem ROM-u</string>
     <string name="changelog_crdroid_error">Dnevnika sprememb ni mogoče naložiti</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">O crDroid-u</string>
     <string name="about_device_name">Naprava</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">Deli crDroid</string>
-    <string name="share_crdroid_summary">Dajte drugim vedeti o crDroid-u</string>
-    <string name="share_message">Preverite, če je #crDroidAndroid na voljo za vašo napravo na https://crdroid.net/</string>
-    <string name="share_chooser_title">Deli crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Radi imamo odprto kodo, preverite nas</string>
-    <string name="crdroid_telegram_title">crDroid skupnost</string>
     <string name="crdroid_telegram_summary">Smo na telegramu. Pridružite se nam!</string>
     <string name="crdroid_telegram_channel_title">Kanal s posodobitvami</string>
     <string name="crdroid_telegram_channel_summary">Bodite obveščeni o novih izgradnjah na Telegramu</string>
@@ -93,13 +86,11 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Podprite nas</string>
     <string name="crdroid_donate_preference_summary">Prispevajte, da podprete nadaljnji razvoj</string>
-    <string name="crdroid_donate_title">crDroid needs your help!</string>
     <string name="crdroid_donate_notification_text">Tap to learn more</string>
     <string name="crdroid_donate_message">crDroid Android is an open-source project which needs your help to keep website online, our build servers running, and to deliver high-quality builds for your device.\n\n
 A small donation helps keep this project alive and improving. You can dismiss this message, but your support means a lot to us.</string>
     <string name="crdroid_donate_button">Donate now</string>
     <string name="crdroid_later_button">Maybe next month</string>
-    <string name="crdroid_channel_name">crDroid notifications</string>
     <string name="crdroid_channel_desc">Project specific notifications</string>
     <string name="crdroid_donate_still_needed">We still need €%,d this month. Help us reach our goal.</string>
     <string name="crdroid_donate_thank_you">We appreciate all donations for this month. You can still contribute and make a difference!</string>
@@ -525,7 +516,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_footer_services_icon_title">Bližnjica storitev v izvajanju</string>
     <string name="qs_footer_settings_icon_title">Bližnjica nastavitev</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid pravo</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Drsnik za svetlost</string>
     <string name="qs_show_brightness_slider_title">Drsnik za svetlost</string>
@@ -885,7 +875,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="status_bar_logo_position_title">Položaj logotipa</string>
     <string name="status_bar_logo_style_title">Slog logotipa</string>
     <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Vesoljec</string>

@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">Налады crDroid</string>
     <string name="crdroid_settings_summary">Тут адбываецца чараўніцтва</string>
     <string name="reset_settings_title">Скінуць налады</string>
-    <string name="reset_settings_message">Гэта прывядзе да скіду большасці налад crdroid да значэнняў па змаўчанні для бягучага карыстальніка. Працягнуць?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Кнопкі</string>
     <string name="lockscreen_title">Экран блакавання</string>
@@ -70,17 +68,11 @@
     <string name="changelog_crdroid_summary">Прагляд змяненняў у бягучай прашыўкі</string>
     <string name="changelog_crdroid_error">Немагчыма загрузіць спіс змен</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">Аб crDroid</string>
     <string name="about_device_name">Прылада</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">Расказаць пра crDroid</string>
-    <string name="share_crdroid_summary">Хай іншыя ведаюць пра crDroid</string>
-    <string name="share_message">Даведайцеся, ці даступны #crDroidAndroid для вашай прылады на @ https://crdroid.net/</string>
-    <string name="share_chooser_title">Расказаць пра crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Зыходны код праекта</string>
-    <string name="crdroid_telegram_title">Супольнасць crDroid</string>
     <string name="crdroid_telegram_summary">Мы таксама ў Telegram. Далучайцеся!</string>
     <string name="crdroid_telegram_channel_title">Канал абнаўленняў</string>
     <string name="crdroid_telegram_channel_summary">Атрымліваць апавяшчэнні аб новых зборках у Telegram</string>
@@ -93,7 +85,6 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Падтрымайце нас</string>
     <string name="crdroid_donate_preference_summary">Ахвяруйце для падтрымкі далейшага развіцця</string>
-    <string name="crdroid_donate_title">crDroid патрэбна ваша дапамога!</string>
     <string name="crdroid_donate_notification_text">Націсніце, каб даведацца больш</string>
     <string name="crdroid_donate_message">crDroid Android — гэта праект з адкрытым зыходным кодам, якому патрэбна ваша дапамога, каб падтрымліваць працу вэб-сайта, нашых сервераў зборкі і ствараць якасныя зборкі для вашай прылады.\n\n
 Невялікае ахвяраванне дапаможа падтрымліваць і ўдасканальвацца гэтаму праекту. Вы можаце не звяртаць увагі на гэтае паведамленне, але ваша падтрымка вельмі важная для нас.</string>
@@ -526,7 +517,6 @@
     <string name="qs_footer_services_icon_title">Значок запушчаных праграм</string>
     <string name="qs_footer_settings_icon_title">Налады хуткага доступу</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">Палітыка прыватнасці crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Рэгулятар яркасці</string>
     <string name="qs_show_brightness_slider_title">Рэгулятар яркасці</string>
@@ -886,7 +876,6 @@
     <string name="status_bar_logo_position_title">Пазіцыя лагатыпа</string>
     <string name="status_bar_logo_style_title">Стыль лагатыпу</string>
     <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Прышэлец</string>
