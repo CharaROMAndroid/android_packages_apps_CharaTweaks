@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">إعدادات crDroid</string>
     <string name="crdroid_settings_summary">ملخص الإعدادات</string>
     <string name="reset_settings_title">إعادة ضبط الإعدادات</string>
-    <string name="reset_settings_message">سيؤدي ذلك إلى إعادة تعيين معظم إعدادات crdroid إلى قيمها الافتراضية للمستخدم الحالي. هل ترغب في المتابعة؟</string>
     <!-- Personalization Categories -->
     <string name="button_title">الأزرار</string>
     <string name="lockscreen_title">شاشة القفل</string>
@@ -62,17 +60,11 @@
     <string name="changelog_crdroid_summary">عرض التغييرات في الروم المثبت</string>
     <string name="changelog_crdroid_error">غير قادر على تحميل سجل التغييرات</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">حول crDroid</string>
     <string name="about_device_name">الجهاز</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">مشاركة crDroid</string>
-    <string name="share_crdroid_summary">دع الآخرين يعرفون عن crDroid</string>
-    <string name="share_message">تحقق مما إذا كان #crDroidAndroid متوفر لجهازك @ https://crdroid.net/</string>
-    <string name="share_chooser_title">مشاركة crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">على موقع Github</string>
     <string name="crdroid_source_summary">نحن نحب المصدر المفتوح، تحقق منا</string>
-    <string name="crdroid_telegram_title">مجتمع crDroid</string>
     <string name="crdroid_telegram_summary">نحن على تليجرام. انضم إلينا!</string>
     <string name="crdroid_telegram_channel_title">قناة التحديثات</string>
     <string name="crdroid_telegram_channel_summary">احصل على إشعارات بالتحديثات الجديدة على تيليجرام</string>
@@ -85,7 +77,6 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">ادعمنا</string>
     <string name="crdroid_donate_preference_summary">تبرع لدعم المزيد من التطوير</string>
-    <string name="crdroid_donate_title">CrDroid يحتاج إلى مساعدتك!</string>
     <string name="crdroid_donate_notification_text">انقر لمعرفة المزيد</string>
     <string name="crdroid_donate_message">crDroid أندرويد هو مشروع مفتوح المصدر يحتاج مساعدتك للحفاظ على الموقع على الإنترنت خوادم البناء لدينا قيد التشغيل، ولتقديم بنايات عالية الجودة لجهازك.\n\n
 تبرع صغير يساعد على إبقاء هذا المشروع على قيد الحياة وتحسينه. يمكنك تجاهل هذه الرسالة، ولكن دعمك يعني الكثير لنا.</string>
@@ -510,7 +501,6 @@
     <string name="qs_footer_services_icon_title">عرض رمز اختصار للخدمات قيد التشغيل</string>
     <string name="qs_footer_settings_icon_title">إختصار الإعدادات</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">فريق crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">شريط السطوع</string>
     <string name="qs_show_brightness_slider_title">شريط السطوع</string>
@@ -887,7 +877,6 @@
     <string name="status_bar_logo_position_title">موقع الشعار</string>
     <string name="status_bar_logo_style_title">نمط الشعار</string>
     <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">أندرويد</string>
     <string name="status_bar_logo_style_adidas">أديداس</string>
     <string name="status_bar_logo_style_alien">كائن فضائي</string>
@@ -924,7 +913,6 @@
     <string name="app_info_install_time">جاري التثبيت %1$s</string>
     <string name="app_info_update_time">تم تحديث %1$s</string>
     <!-- Show clipboard overlay -->
-    <string name="show_clipboard_overlay_title">إعدادات CrDroid</string>
     <string name="show_clipboard_overlay_summary">إظهار تراكب في الجزء السفلي الأيسر من الشاشة عندما يتم نسخ شيء ما إلى الحافظة</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">تأمين المستشعر</string>

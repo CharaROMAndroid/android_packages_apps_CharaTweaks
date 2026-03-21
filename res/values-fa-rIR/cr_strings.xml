@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">تنظیمات crDroid</string>
     <string name="crdroid_settings_summary">باز کردن تنظیمات ویژه</string>
     <string name="reset_settings_title">بازنشانی تنظیمات</string>
-    <string name="reset_settings_message">با این کار بیشتر تنظیمات crdroid برای کاربر فعلی به مقادیر پیشفرض بازنشانی میشود،دوست دارید ادامه دهید؟</string>
     <!-- Personalization Categories -->
     <string name="button_title">دکمه‌‌ها</string>
     <string name="lockscreen_title">صفحه قفل</string>
@@ -62,36 +60,27 @@
     <string name="changelog_crdroid_summary">دیدن تغییرات ایجاد شده در این ورژن</string>
     <string name="changelog_crdroid_error">قادر به بارگذاری لیست تغییرات نیست</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">درباره ی crDroid</string>
     <string name="about_device_name">دستگاه</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">اشتراک گذاری crDroid</string>
-    <string name="share_crdroid_summary">به دیگران crDroid را معرفی کنید</string>
-    <string name="share_message">ببین آیا #crDroidAndroid برای دستگاه شما در دسترس هس @ https://crdroid.net/</string>
-    <string name="share_chooser_title">اشتراک گذاری crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">گیت‌هاب</string>
     <string name="crdroid_source_summary">ما عاشق open source هستیم، ببینید</string>
-    <string name="crdroid_telegram_title">جامعه crDroid</string>
     <string name="crdroid_telegram_summary">ما در تلگرام هستیم. به ما بپیوند!</string>
     <string name="crdroid_telegram_channel_title">کانال به‌روزرسانی‌ها</string>
     <string name="crdroid_telegram_channel_summary">در تلگرام از بروزرسانی ها مطلع شوید</string>
     <string name="crdroid_website_title">تارنمای رسمی</string>
     <string name="crdroid_website_summary">سایت رسمی ما را دیدن کنید</string>
     <string name="crdroid_translate_title">ترجمه‌ها</string>
-    <string name="crdroid_translate_summary">به ترجمه crDroid به زبان خودتان کمک کنید!</string>
     <string name="crdroid_sponsor_summary">از سایت همکار میزبان ما دیدن کنید</string>
     <string name="crdroid_buildserversponsor_summary">ما سرورهای آنها را در صورت علاقه به یکی توصیه می کنیم</string>
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">از ما حمایت کنید</string>
     <string name="crdroid_donate_preference_summary">برای حمایت کردن از توسعه بیشتر کمک مالی کنید</string>
-    <string name="crdroid_donate_title">crDroid به کمک شما نیاز دارد!</string>
     <string name="crdroid_donate_notification_text">برای اطلاعات بیشتر کلیک کنید</string>
     <string name="crdroid_donate_message">crDroid Android یک پروژه متن‌باز است که برای آنلاین نگه داشتن وب‌سایت، فعال نگه داشتن سرورهای ساخت ما و ارائه نسخه‌های با کیفیت بالا برای دستگاه شما به کمک شما نیاز دارد.\n\n
 کمک مالی کوچک به زنده نگه داشتن و بهبود این پروژه کمک می‌کند. می‌توانید این پیام را نادیده بگیرید، اما حمایت شما برای ما بسیار ارزشمند است.</string>
     <string name="crdroid_donate_button">اکنون کمک کنید</string>
     <string name="crdroid_later_button">شاید ماه دیگه</string>
-    <string name="crdroid_channel_name">اعلان‌های crDroid</string>
     <string name="crdroid_channel_desc">اطلاعیه‌های ویژه پروژه</string>
     <string name="crdroid_donate_still_needed">ما هنوز برای این ماه به €% نیاز داریم. به ما کمک کنید تا به هدفمان برسیم.</string>
     <string name="crdroid_donate_thank_you">ما از تمام کمک‌های مالی شما در این ماه قدردانی می‌کنیم. شما هنوز هم می‌توانید کمک کنید و تغییری ایجاد کنید!</string>
@@ -505,7 +494,6 @@
     <string name="qs_footer_services_icon_title">میانبر خدمات های در حال اجرا</string>
     <string name="qs_footer_settings_icon_title">میان‌بر تنظیمات</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">حقوق crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">نوار کنترل روشنایی</string>
     <string name="qs_show_brightness_slider_title">نوار کنترل روشنایی</string>
@@ -878,7 +866,6 @@
     <string name="status_bar_logo_position_title">موقعیت آرم</string>
     <string name="status_bar_logo_style_title">سبک آرم</string>
     <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">اندروید</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>

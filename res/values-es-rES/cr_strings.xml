@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">Ajustes de crDroid</string>
     <string name="crdroid_settings_summary">Abre lo bueno</string>
     <string name="reset_settings_title">Restablecer ajustes</string>
-    <string name="reset_settings_message">Esto restablecerá la mayor parte de la configuración de crDroid a sus valores predeterminados para el usuario actual. ¿Deseas continuar?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Botones</string>
     <string name="lockscreen_title">Pantalla de bloqueo</string>
@@ -62,17 +60,11 @@
     <string name="changelog_crdroid_summary">Ver los cambios en la ROM instalada</string>
     <string name="changelog_crdroid_error">No se ha podido cargar el registro de cambios</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">Acerca de crDroid</string>
     <string name="about_device_name">Dispositivo</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">Compartir crDroid</string>
-    <string name="share_crdroid_summary">Haz saber a los demás qué es crDroid</string>
-    <string name="share_message">Echa un vistazo si #crDroidAndroid está disponible para tu dispositivo @ https://crdroid.net/</string>
-    <string name="share_chooser_title">Compartir crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Nos encanta el código abierto, échanos un vistazo</string>
-    <string name="crdroid_telegram_title">comunidad de crDroid</string>
     <string name="crdroid_telegram_summary">Estamos en Telegram. ¡Únete!</string>
     <string name="crdroid_telegram_channel_title">Canal de actualización</string>
     <string name="crdroid_telegram_channel_summary">Recibe notificaciones de nuevas versiones en Telegram</string>
@@ -85,13 +77,11 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Apóyanos</string>
     <string name="crdroid_donate_preference_summary">Donar para apoyar un mejor desarrollo</string>
-    <string name="crdroid_donate_title">¡CrDroid necesita tu ayuda!</string>
     <string name="crdroid_donate_notification_text">Toque para obtener más información</string>
     <string name="crdroid_donate_message">crDroid Android es un proyecto de código abierto que necesita tu ayuda para mantener nuestro sitio web en línea, nuestros servidores de compilación en funcionamiento y para ofrecer compilaciones de alta calidad para tu dispositivo.\n\n
 Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora. Puedes ignorar este mensaje, pero tu apoyo es muy importante para nosotros.</string>
     <string name="crdroid_donate_button">Dona ahora</string>
     <string name="crdroid_later_button">Quizás el próximo mes</string>
-    <string name="crdroid_channel_name">Notificaciones de crDroid</string>
     <string name="crdroid_channel_desc">Notificaciones específicas del proyecto</string>
     <string name="crdroid_donate_still_needed">Todavía necesitamos €%,d este mes. Ayúdanos a alcanzar nuestra meta.</string>
     <string name="crdroid_donate_thank_you">Agradecemos todas las donaciones de este mes. ¡Aún puedes contribuir y marcar la diferencia!</string>
@@ -505,7 +495,6 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="qs_footer_services_icon_title">Acceso directo a servicios en ejecución</string>
     <string name="qs_footer_settings_icon_title">Acceso directo a ajustes</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">Equipo legal de crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Barra de brillo</string>
     <string name="qs_show_brightness_slider_title">Barra de brillo</string>
@@ -878,7 +867,6 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="status_bar_logo_position_title">Posición del logo</string>
     <string name="status_bar_logo_style_title">Estilo del logo</string>
     <string name="status_bar_logo_style_summary">Seleccionar logo personalizado para mostrar</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>

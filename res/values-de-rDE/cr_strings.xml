@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroid-Einstellungen</string>
     <string name="crdroid_settings_summary">Erweiterte Einstellungen öffnen</string>
     <string name="reset_settings_title">Einstellungen zurücksetzen</string>
-    <string name="reset_settings_message">Dadurch werden die meisten crDroid-Einstellungen für den aktuellen Nutzer auf die Standardwerte zurückgesetzt. Fortfahren?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Tasten</string>
     <string name="lockscreen_title">Sperrbildschirm</string>
@@ -62,17 +60,11 @@
     <string name="changelog_crdroid_summary">Änderungen in der installierten ROM anzeigen</string>
     <string name="changelog_crdroid_error">Changelog konnte nicht geladen werden</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">Über crDroid</string>
     <string name="about_device_name">Gerät</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">crDroid teilen</string>
-    <string name="share_crdroid_summary">crDroid weiterempfehlen</string>
-    <string name="share_message">Finde heraus, ob es #crDroidAndroid schon für dein Gerät gibt auf: https://crdroid.net/</string>
-    <string name="share_chooser_title">crDroid teilen</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Wir lieben Open Source, schau doch mal auf unserer GitHub-Seite vorbei</string>
-    <string name="crdroid_telegram_title">crDroid-Community</string>
     <string name="crdroid_telegram_summary">Wir sind auch bei Telegram. Komm in die Gruppe!</string>
     <string name="crdroid_telegram_channel_title">Kanal für Updates</string>
     <string name="crdroid_telegram_channel_summary">Lass dich auf Telegram über neue Builds benachrichtigen</string>
@@ -85,13 +77,11 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Unterstütze uns</string>
     <string name="crdroid_donate_preference_summary">Spende, um die Entwicklung zu unterstützen</string>
-    <string name="crdroid_donate_title">crDroid ist auf deine Unterstützung angewiesen!</string>
     <string name="crdroid_donate_notification_text">Tippen, um mehr zu erfahren</string>
     <string name="crdroid_donate_message">crDroid-Android ist ein Open-Source-Projekt und auf deine Unterstützung angewiesen, damit die Website und unsere Build-Server online bleiben und um dich mit hochwertigen Builds für dein Gerät zu versorgen.\n\n
 Mit einer kleinen Spende trägst du dazu bei, dass das Projekt am Leben bleibt und stetig verbessert wird. Du kannst diese Nachricht wegtippen, aber deine Unterstützung bedeutet uns sehr viel.</string>
     <string name="crdroid_donate_button">Jetzt spenden</string>
     <string name="crdroid_later_button">Vielleicht nächsten Monat</string>
-    <string name="crdroid_channel_name">crDroid-Benachrichtigungen</string>
     <string name="crdroid_channel_desc">Projektspezifische Benachrichtigungen</string>
     <string name="crdroid_donate_still_needed">Diesen Monat fehlen uns noch €%,d. Hilf uns dabei, unser Ziel zu erreichen.</string>
     <string name="crdroid_donate_thank_you">Wir sagen Danke für alle bisherigen Spenden dieses Monats. Mit deinem Beitrag kannst du auch jetzt noch etwas bewirken!</string>
@@ -505,7 +495,6 @@ Mit einer kleinen Spende trägst du dazu bei, dass das Projekt am Leben bleibt u
     <string name="qs_footer_services_icon_title">Verknüpfung zu aktiven Diensten</string>
     <string name="qs_footer_settings_icon_title">Verknüpfung zu Einstellungen</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">Rechtliche Hinweise zu crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Helligkeitsregler</string>
     <string name="qs_show_brightness_slider_title">Helligkeitsregler</string>
@@ -878,7 +867,6 @@ Mit einer kleinen Spende trägst du dazu bei, dass das Projekt am Leben bleibt u
     <string name="status_bar_logo_position_title">Logoposition</string>
     <string name="status_bar_logo_style_title">Logostil</string>
     <string name="status_bar_logo_style_summary">Benutzerdefiniertes Logo auswählen</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>

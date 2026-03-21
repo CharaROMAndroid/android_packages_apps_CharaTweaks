@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">Setări crDroid</string>
     <string name="crdroid_settings_summary">Unde se intampla magia</string>
     <string name="reset_settings_title">Resetare setări</string>
-    <string name="reset_settings_message">Aceasta va reseta cele mai multe setări crdroid la valorile lor implicite pentru utilizatorul curent. Doriți să continuați?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Butoane</string>
     <string name="lockscreen_title">Ecran de blocare</string>
@@ -62,17 +60,11 @@
     <string name="changelog_crdroid_summary">Vezi modificările în ROM-ul instalat</string>
     <string name="changelog_crdroid_error">Imposibil de încărcat jurnalul modificărilor</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">Despre crDroid</string>
     <string name="about_device_name">Dispozitiv</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">Distribuie crDroid</string>
-    <string name="share_crdroid_summary">Anunta-i si pe altii despre crDroid</string>
-    <string name="share_message">Verifică dacă #crDroidAndroid este disponibil pentru dispozitivul tău @ https://crdroid.net/</string>
-    <string name="share_chooser_title">Distribuie crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Ne plac sursele deschise, vezi mai multe</string>
-    <string name="crdroid_telegram_title">Comunitatea crDroid</string>
     <string name="crdroid_telegram_summary">Suntem pe Telegram. Vino alături de noi!</string>
     <string name="crdroid_telegram_channel_title">Canal actualizări</string>
     <string name="crdroid_telegram_channel_summary">Primește notificări despre noile creații pe Telegram</string>
@@ -85,13 +77,11 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Susține-ne</string>
     <string name="crdroid_donate_preference_summary">Donează pentru a sprijini dezvoltarea ulterioară</string>
-    <string name="crdroid_donate_title">crDroid are nevoie de ajutorul tău!</string>
     <string name="crdroid_donate_notification_text">Apasă pentru a afla mai multe</string>
     <string name="crdroid_donate_message">crDroid Android este un proiect open-source care are nevoie de ajutorul tău pentru a păstra site-ul online, serverele noastre de compilare rulează și oferă un ROM de înaltă calitate pentru dispozitivul tău.\n\n
 O donație mică ajută la menținerea acestui proiect în viață și la îmbunătățirea lui. Poți respinge acest mesaj, dar suportul tău înseamnă mult pentru noi.</string>
     <string name="crdroid_donate_button">Donează acum</string>
     <string name="crdroid_later_button">Poate luna viitoare</string>
-    <string name="crdroid_channel_name">Notificări crDroid</string>
     <string name="crdroid_channel_desc">Notificări specifice proiectului</string>
     <string name="crdroid_donate_still_needed">Avem încă nevoie de €%,d în această lună. Ajută-ne să ne atingem obiectivul.</string>
     <string name="crdroid_donate_thank_you">Apreciem toate donațiile pentru această lună. Încă mai poți contribui și face diferență!</string>
@@ -506,7 +496,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="qs_footer_services_icon_title">Scurtătură servicii rulante</string>
     <string name="qs_footer_settings_icon_title">Scurtătură setări</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">Legal crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Cursor luminozitate</string>
     <string name="qs_show_brightness_slider_title">Cursor luminozitate</string>
@@ -880,7 +869,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="status_bar_logo_position_title">Pozitie logo</string>
     <string name="status_bar_logo_style_title">Stil logo</string>
     <string name="status_bar_logo_style_summary">Selectați un logo personalizat pentru afișare</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Extraterestru</string>

@@ -19,7 +19,6 @@
     <string name="crdroid_settings_title">সিআরড্রয়েড সেটিংস</string>
     <string name="crdroid_settings_summary">গুডনেস উন্মুক্ত করুন</string>
     <string name="reset_settings_title">সেটিংস রিসেট করুন</string>
-    <string name="reset_settings_message">এটি বর্তমান ব্যবহারকারীর জন্য বেশিরভাগ crdroid সেটিংসকে তাদের ডিফল্ট মানগুলিতে পুনরায় সেট করবে। আপনি কি অবিরত করতে চান?</string>
     <!-- Personalization Categories -->
     <string name="button_title">বাটন</string>
     <string name="lockscreen_title">লক স্ক্রিন</string>
@@ -62,17 +61,11 @@
     <string name="changelog_crdroid_summary">ইনস্টল করা রমে পরিবর্তন দেখুন</string>
     <string name="changelog_crdroid_error">পরিবর্তন লোড করতে অক্ষম</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">CrDroid সম্পর্কে</string>
     <string name="about_device_name">ডিভাইস</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">CrDroid শেয়ার করুন</string>
-    <string name="share_crdroid_summary">CrDroid সম্পর্কে অন্যদের জানান</string>
-    <string name="share_message">crDroid আপনার ডিভাইসে আছে কিনা দেখুন</string>
-    <string name="share_chooser_title">CrDroid শেয়ার করুন</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">গিটহাব</string>
     <string name="crdroid_source_summary">আমরা ওপেন সোর্স ভালবাসি, আমাদেরকে দেখুন</string>
-    <string name="crdroid_telegram_title">crDroid সম্প্রদায়</string>
     <string name="crdroid_telegram_summary">আমরা টেলিগ্রামে আছি। আমাদের সাথে যোগদান করুন!</string>
     <string name="crdroid_telegram_channel_title">আপডেট চ্যানেল</string>
     <string name="crdroid_telegram_channel_summary">টেলিগ্রামে নতুন বিল্ড সম্পর্কে বিজ্ঞপ্তি পান</string>
@@ -85,13 +78,11 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">আমাদের সমর্থন করুন</string>
     <string name="crdroid_donate_preference_summary">আরও উন্নয়নে সহায়তা করার জন্য দান করুন</string>
-    <string name="crdroid_donate_title">crDroid needs your help!</string>
     <string name="crdroid_donate_notification_text">Tap to learn more</string>
     <string name="crdroid_donate_message">crDroid Android is an open-source project which needs your help to keep website online, our build servers running, and to deliver high-quality builds for your device.\n\n
 A small donation helps keep this project alive and improving. You can dismiss this message, but your support means a lot to us.</string>
     <string name="crdroid_donate_button">Donate now</string>
     <string name="crdroid_later_button">Maybe next month</string>
-    <string name="crdroid_channel_name">crDroid notifications</string>
     <string name="crdroid_channel_desc">Project specific notifications</string>
     <string name="crdroid_donate_still_needed">We still need €%,d this month. Help us reach our goal.</string>
     <string name="crdroid_donate_thank_you">We appreciate all donations for this month. You can still contribute and make a difference!</string>
@@ -505,7 +496,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_footer_services_icon_title">চলমান পরিষেবার শর্টকাট</string>
     <string name="qs_footer_settings_icon_title">সেটিংস শর্টকাট</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid legal</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">ব্রাইটনেস স্লাইডার/উজ্জ্বলতা বার</string>
     <string name="qs_show_brightness_slider_title">ব্রাইটনেস স্লাইডার/উজ্জ্বলতা বার</string>

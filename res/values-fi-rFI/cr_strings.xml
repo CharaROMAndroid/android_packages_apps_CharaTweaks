@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroidin asetukset</string>
     <string name="crdroid_settings_summary">Avaa hyvyys</string>
     <string name="reset_settings_title">Nollaa asetukset</string>
-    <string name="reset_settings_message">Tämä palauttaa nykyiselle käyttäjälle useimmat crDroid-asetukset niiden oletusarvoille. Haluatko jatkaa?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Painikkeet</string>
     <string name="lockscreen_title">Lukitusnäyttö</string>
@@ -62,17 +60,11 @@
     <string name="changelog_crdroid_summary">Näytä muutokset asennetussa ROMissa</string>
     <string name="changelog_crdroid_error">Muutoslokin lataaminen epäonnistui</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">Tietoja crDroidista</string>
     <string name="about_device_name">Laite</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">Jaa crDroid</string>
-    <string name="share_crdroid_summary">Anna muiden tietää crDroidista</string>
-    <string name="share_message">Tarkista, onko #crDroidAndroid saatavilla laitteellesi @ https://crdroid.net/</string>
-    <string name="share_chooser_title">Jaa crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Rakastamme avointa lähdekoodia, tutustu meihin</string>
-    <string name="crdroid_telegram_title">crDroid-yhteisö</string>
     <string name="crdroid_telegram_summary">Olemme telegramissa. Liity meihin!</string>
     <string name="crdroid_telegram_channel_title">Päivitykset-kanava</string>
     <string name="crdroid_telegram_channel_summary">Saa ilmoitukset uusista päivityksistä Telegramissa</string>
@@ -85,14 +77,12 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Tue meitä</string>
     <string name="crdroid_donate_preference_summary">Tue jatkokehitystä lahjoittamalla</string>
-    <string name="crdroid_donate_title">crDroid tarvitsee tukeasi!</string>
     <string name="crdroid_donate_notification_text">Paina tietääksesi lisää</string>
     <string name="crdroid_donate_message">crDroid android on avoimen lähdekoodin projekti mikä tarvitsee tukeasi pysyäkseen pystyssä, meidän palvelumme toiminnassa, ja toimittaakseen korkealaatuisia päivityksiä laitteellesi.
 Pienikin lahjoitus auttaa projektin ylläpidossa.
 Voit hylätä tämän viestin mutta tukesi auttaa paljon.</string>
     <string name="crdroid_donate_button">Lahjoita nyt</string>
     <string name="crdroid_later_button">Ehkä ensi kuussa</string>
-    <string name="crdroid_channel_name">crDroid ilmoitukset</string>
     <string name="crdroid_channel_desc">Project specific notifications</string>
     <string name="crdroid_donate_still_needed">We still need €%,d this month. Help us reach our goal.</string>
     <string name="crdroid_donate_thank_you">We appreciate all donations for this month. You can still contribute and make a difference!</string>
@@ -506,7 +496,6 @@ Voit hylätä tämän viestin mutta tukesi auttaa paljon.</string>
     <string name="qs_footer_services_icon_title">Running services shortcut</string>
     <string name="qs_footer_settings_icon_title">Asetusten pikakuvake</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid legal</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Kirkkauden säädin</string>
     <string name="qs_show_brightness_slider_title">Kirkkauden säädin</string>
@@ -879,7 +868,6 @@ Voit hylätä tämän viestin mutta tukesi auttaa paljon.</string>
     <string name="status_bar_logo_position_title">Logo position</string>
     <string name="status_bar_logo_style_title">Logo style</string>
     <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>

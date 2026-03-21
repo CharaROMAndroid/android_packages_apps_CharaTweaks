@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">Nastavenia crDroid</string>
     <string name="crdroid_settings_summary">Otvorte dobroty</string>
     <string name="reset_settings_title">Resetovať nastavenia</string>
-    <string name="reset_settings_message">To obnoví väčšinu crdroid nastavení na predvolené hodnoty pre aktuálneho používateľa. Chcete pokračovať?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Tlačidlá</string>
     <string name="lockscreen_title">Obrazovka uzamknutia</string>
@@ -62,13 +60,8 @@
     <string name="changelog_crdroid_summary">Zobraziť zmeny v nainštalovanej ROM</string>
     <string name="changelog_crdroid_error">Nie je možné načítať zoznam zmien</string>
     <!-- About crDroid -->
-    <string name="about_crdroid">O crDroid</string>
     <string name="about_device_name">Zariadenie</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">Zdieľať crDroid</string>
-    <string name="share_crdroid_summary">Dajte ostatným vedieť o crDroid</string>
-    <string name="share_message">Zistite o #crDroid viac na @ https://crdroid.net/</string>
-    <string name="share_chooser_title">Zdieľať crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Máme radi open source, pozrite sa na nás</string>
@@ -86,13 +79,11 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Podporte nás</string>
     <string name="crdroid_donate_preference_summary">Prispejte na podporu rozvoja a na náš server</string>
-    <string name="crdroid_donate_title">crDroid potrebuje tvoju pomoc!</string>
     <string name="crdroid_donate_notification_text">Kliknutím zistite viac</string>
     <string name="crdroid_donate_message">crDroid Android je open-source projekt, ktorý potrebuje vašu pomoc na fungovanie našej webstránky, na fungovanie našich serverov a aby sme mohli poskytovať vysokokvalitné zostavy pre vaše zariadenie.\n\n
 Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto správu môžete ignorovať, ale vaša podpora pre nás veľa znamená.</string>
     <string name="crdroid_donate_button">Prispieť</string>
     <string name="crdroid_later_button">Možno ďalší mesiac</string>
-    <string name="crdroid_channel_name">crDroid upozornenia</string>
     <string name="crdroid_channel_desc">Oznámenia projektu</string>
     <string name="crdroid_donate_still_needed">Tento mesiac potrebujeme získať %,d €. Pomôž nám dosiahnuť tento cieľ.</string>
     <string name="crdroid_donate_thank_you">Ďakujeme za všetky dary za tento mesiac. Stále môžete prispieť a zmeniť veci k lepšiemu!</string>
@@ -508,7 +499,6 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="qs_footer_services_icon_title">Odkaz na spustené služby</string>
     <string name="qs_footer_settings_icon_title">Odkaz na nastavenia</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">Licencia crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Posuvník jasu</string>
     <string name="qs_show_brightness_slider_title">Posuvník jasu</string>
@@ -883,7 +873,6 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="status_bar_logo_position_title">Umiestnenie loga</string>
     <string name="status_bar_logo_style_title">Štýl loga</string>
     <string name="status_bar_logo_style_summary">Vybrať vlastné logo na zobrazenie</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Mimozemšťan</string>

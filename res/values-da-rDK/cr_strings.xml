@@ -16,10 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroid-indstillinger</string>
     <string name="crdroid_settings_summary">Åbn Godhed</string>
     <string name="reset_settings_title">Nulstil indstillinger</string>
-    <string name="reset_settings_message">Dette vil nulstille de fleste crDroid-indstillinger til deres standardværdier for den aktuelle bruger. Fortsæt?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Knapper</string>
     <string name="lockscreen_title">Låseskærm</string>
@@ -65,14 +63,9 @@
     <string name="about_crdroid">Om AirDroid</string>
     <string name="about_device_name">Enhed</string>
     <!-- Share crDroid -->
-    <string name="share_crdroid_title">Del crDroid</string>
-    <string name="share_crdroid_summary">Fortæl andre om crDroid</string>
-    <string name="share_message">Tjek ud, hvad #crDroid handler om @ https://plus.google.com/communities/118297646046960923906</string>
-    <string name="share_chooser_title">Del crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Vi elsker open source, tjek os ud</string>
-    <string name="crdroid_telegram_title">crDroid fællesskab</string>
     <string name="crdroid_telegram_summary">Vi er på telegram. Tilmeld dig!</string>
     <string name="crdroid_telegram_channel_title">Opdater kanal</string>
     <string name="crdroid_telegram_channel_summary">Få besked om nye builds på Telegram</string>
@@ -85,13 +78,11 @@
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Støt os</string>
     <string name="crdroid_donate_preference_summary">Donate to support further development</string>
-    <string name="crdroid_donate_title">crDroid needs your help!</string>
     <string name="crdroid_donate_notification_text">Tap to learn more</string>
     <string name="crdroid_donate_message">crDroid Android is an open-source project which needs your help to keep website online, our build servers running, and to deliver high-quality builds for your device.\n\n
 A small donation helps keep this project alive and improving. You can dismiss this message, but your support means a lot to us.</string>
     <string name="crdroid_donate_button">Donate now</string>
     <string name="crdroid_later_button">Maybe next month</string>
-    <string name="crdroid_channel_name">crDroid notifications</string>
     <string name="crdroid_channel_desc">Project specific notifications</string>
     <string name="crdroid_donate_still_needed">We still need €%,d this month. Help us reach our goal.</string>
     <string name="crdroid_donate_thank_you">We appreciate all donations for this month. You can still contribute and make a difference!</string>
@@ -505,7 +496,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_footer_services_icon_title">Genvej til Kørende tjenester</string>
     <string name="qs_footer_settings_icon_title">Indstillingsgenvej</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid legal</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Lysstyrkeskyder</string>
     <string name="qs_show_brightness_slider_title">Lysstyrkeskyder</string>
@@ -878,7 +868,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="status_bar_logo_position_title">Logoposition</string>
     <string name="status_bar_logo_style_title">Logostil</string>
     <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>
