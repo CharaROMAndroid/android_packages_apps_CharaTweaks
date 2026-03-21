@@ -24,14 +24,14 @@
         android:key="lockscreen_pulse_enabled"
         android:title="@string/enable" />
 
-    <com.chararom.settings.preferences.SecureSettingSwitchPreference
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="ambient_pulse_enabled"
         android:title="@string/ambient_pulse_enabled_title"
         android:summary="@string/ambient_pulse_enabled_summary"
         android:defaultValue="true"
         android:dependency="lockscreen_pulse_enabled" />
 
-    <com.chararom.settings.preferences.SecureSettingListPreference
+    <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="pulse_renderer"
         android:title="@string/pulse_renderer"
         android:summary="%s"
@@ -41,14 +41,14 @@
         android:defaultValue="solid"
         android:dependency="lockscreen_pulse_enabled" />
 
-    <com.chararom.settings.preferences.SecureSettingSwitchPreference
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="pulse_rounded_bars"
         android:title="@string/pulse_rounded_bars_title"
         android:summary="@string/pulse_rounded_bars_summary"
         android:defaultValue="false"
         android:dependency="lockscreen_pulse_enabled" />
 
-    <com.chararom.settings.preferences.SecureSettingListPreference
+    <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="pulse_color"
         android:title="@string/pulse_color"
         android:summary="%s"
@@ -58,7 +58,7 @@
         android:defaultValue="lavalamp"
         android:dependency="lockscreen_pulse_enabled" />
 
-    <com.chararom.settings.preferences.SecureSettingSeekBarPreference
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
         android:key="pulse_bar_count"
         android:title="@string/pulse_bar_count_title"
         android:summary="@string/pulse_bar_count_summary"

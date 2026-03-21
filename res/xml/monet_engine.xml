@@ -39,7 +39,7 @@
         android:entryValues="@array/monet_engine_color_source_values"
         android:defaultValue="0" />
 
-    <com.chararom.settings.preferences.colorpicker.ColorPickerPreference
+    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
         android:key="accent_color"
         android:title="@string/monet_engine_custom_color_title"
         android:summary="@string/monet_engine_custom_color_summary"
@@ -51,13 +51,13 @@
         android:summary="@string/monet_engine_custom_bgcolor_summary"
         android:defaultValue="false" />
 
-    <com.chararom.settings.preferences.colorpicker.ColorPickerPreference
+    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
         android:key="bg_color"
         android:title="@string/monet_engine_color_override_title"
         android:dependency="accent_background"
         android:defaultValue="0xFF1b6ef3" />
 
-    <com.chararom.settings.preferences.CustomSeekBarPreference
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
         android:key="luminance_factor"
         android:title="@string/monet_engine_luminance_factor_title"
         android:summary="@string/monet_engine_luminance_factor_summary"
@@ -68,7 +68,7 @@
         settings:units="%"
         settings:showSign="true" />
 
-    <com.chararom.settings.preferences.CustomSeekBarPreference
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
         android:key="chroma_factor"
         android:title="@string/monet_engine_chroma_factor_title"
         android:summary="@string/monet_engine_chroma_factor_summary"

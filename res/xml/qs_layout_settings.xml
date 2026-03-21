@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/qs_layout_columns_rows_title">
 
-    <com.chararom.settings.preferences.SystemSettingSeekBarPreference
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
         android:key="qs_tiles_columns"
         android:title="@string/qs_columns_portrait_title"
         android:max="6"
@@ -27,7 +27,7 @@
         settings:interval="1"
         android:defaultValue="4" />
 
-    <com.chararom.settings.preferences.SystemSettingSeekBarPreference
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
         android:key="qs_tiles_columns_landscape"
         android:title="@string/qs_columns_landscape_title"
         android:max="6"
@@ -35,7 +35,7 @@
         settings:interval="1"
         android:defaultValue="4" />
 
-    <com.chararom.settings.preferences.SystemSettingSeekBarPreference
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
         android:key="qs_tiles_rows"
         android:title="@string/qs_rows_portrait_title"
         android:max="5"
@@ -43,7 +43,7 @@
         settings:interval="1"
         android:defaultValue="4" />
 
-    <com.chararom.settings.preferences.SystemSettingSeekBarPreference
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
         android:key="qs_tiles_rows_landscape"
         android:title="@string/qs_rows_landscape_title"
         android:max="3"
@@ -51,7 +51,7 @@
         settings:interval="1"
         android:defaultValue="2" />
 
-    <com.chararom.settings.preferences.SystemSettingSeekBarPreference
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
         android:key="qqs_tiles_rows"
         android:title="@string/qqs_rows_portrait_title"
         android:max="3"
@@ -59,7 +59,7 @@
         settings:interval="1"
         android:defaultValue="2" />
 
-    <!--<com.chararom.settings.preferences.SystemSettingSeekBarPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingSeekBarPreference
         android:key="qqs_tiles_rows_landscape"
         android:title="@string/qqs_rows_landscape_title"
         android:max="3"

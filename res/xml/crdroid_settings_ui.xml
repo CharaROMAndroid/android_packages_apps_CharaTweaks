@@ -25,10 +25,10 @@
         android:icon="@drawable/ic_ambient"
         android:title="@string/doze_display_title"
         android:summary="@string/doze_display_summary"
-        android:fragment="com.chararom.settings.fragments.ui.DozeSettings" />
+        android:fragment="com.crdroid.settings.fragments.ui.DozeSettings" />
 
     <!-- Ambient Wallpaper -->
-    <com.chararom.settings.preferences.SecureSettingSwitchPreference
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="doze_always_on_wallpaper_enabled"
         android:icon="@drawable/ic_screensaver"
         android:title="@string/doze_always_on_wallpaper_title"
@@ -36,7 +36,7 @@
         android:defaultValue="@*android:bool/config_dozeSupportsAodWallpaper" />
 
     <!-- Ambient Music Ticker -->
-    <com.chararom.settings.preferences.SecureSettingSwitchPreference
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="pulse_on_new_tracks"
         android:icon="@drawable/ic_music_note"
         android:title="@string/pulse_on_new_tracks_title"
@@ -48,7 +48,7 @@
         android:icon="@drawable/ic_edge_light"
         android:title="@string/edge_light_title"
         android:summary="@string/edge_light_summary"
-        android:fragment="com.chararom.settings.fragments.ui.EdgeLightSettings" />
+        android:fragment="com.crdroid.settings.fragments.ui.EdgeLightSettings" />
 
     <!-- Gradient Customization -->
     <Preference
@@ -56,10 +56,10 @@
         android:icon="@drawable/ic_gradient"
         android:title="@string/gradient_settings_title"
         android:summary="@string/gradient_settings_summary"
-        android:fragment="com.chararom.settings.fragments.ui.GradientSettings" />
+        android:fragment="com.crdroid.settings.fragments.ui.GradientSettings" />
 
     <!-- Font style -->
-    <com.chararom.settings.preferences.FontsPickerPreference
+    <com.crdroid.settings.preferences.FontsPickerPreference
         android:key="system_font"
         android:icon="@drawable/ic_font"
         android:title="@string/theme_customization_font_title"
@@ -71,10 +71,10 @@
         android:icon="@drawable/ic_themes"
         android:title="@string/monet_title"
         android:summary="@string/monet_summary"
-        android:fragment="com.chararom.settings.fragments.ui.MonetSettings" />
+        android:fragment="com.crdroid.settings.fragments.ui.MonetSettings" />
 
     <!-- Charging animation -->
-    <com.chararom.settings.preferences.SystemSettingSwitchPreference
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="charging_animation"
         android:icon="@drawable/ic_battery_charging"
         android:title="@string/charging_animation_title"
@@ -89,11 +89,11 @@
         android:summary="@string/display_cutout_force_fullscreen_summary">
         <intent android:action="android.intent.action.MAIN"
              android:targetPackage="com.android.settings"
-             android:targetClass="com.chararom.settings.fragments.ui.DisplayCutoutForceFullscreenActivity"/>
+             android:targetClass="com.crdroid.settings.fragments.ui.DisplayCutoutForceFullscreenActivity"/>
     </Preference>
 
     <!-- Screen Off animation -->
-    <com.chararom.settings.preferences.SystemSettingListPreference
+    <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="screen_off_animation"
         android:icon="@drawable/ic_television_classic"
         android:title="@string/screen_off_animation_title"
@@ -108,7 +108,7 @@
         android:icon="@drawable/ic_smart_pixels"
         android:title="@string/smart_pixels_title" 
         android:summary="@string/smart_pixels_summary" 
-        android:fragment="com.chararom.settings.fragments.ui.SmartPixels" />
+        android:fragment="com.crdroid.settings.fragments.ui.SmartPixels" />
 
     <!-- Navbar Style
     <Preference
@@ -116,10 +116,10 @@
         android:icon="@drawable/ic_navbar"
         android:title="@string/theme_customization_navbar_title"
         android:summary="@string/theme_customization_navbar_summary"
-        android:fragment="com.chararom.settings.fragments.ui.NavbarStyles"/> -->
+        android:fragment="com.crdroid.settings.fragments.ui.NavbarStyles"/> -->
 
     <!-- Notification Style
-    <com.chararom.settings.preferences.SystemSettingListPreference
+    <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="notification_style"
         android:icon="@drawable/ic_message_text_outline"
         android:title="@string/notification_style_title"
@@ -129,7 +129,7 @@
         android:defaultValue="0" /> -->
 
     <!-- Powermenu Style
-    <com.chararom.settings.preferences.SystemSettingListPreference
+    <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="powermenu_style"
         android:icon="@drawable/ic_settings_powermenu"
         android:title="@string/powermenu_style_title"
@@ -144,7 +144,7 @@
         android:icon="@drawable/ic_drawing"
         android:title="@string/theme_customization_icon_pack_title"
         android:summary="@string/theme_customization_icon_pack_summary"
-        android:fragment="com.chararom.settings.fragments.ui.StatusbarIcons"/> -->
+        android:fragment="com.crdroid.settings.fragments.ui.StatusbarIcons"/> -->
 
     <!-- Signal icon style
     <Preference
@@ -152,7 +152,7 @@
         android:icon="@drawable/ic_signal"
         android:title="@string/theme_customization_signal_icon_title"
         android:summary="@string/theme_customization_signal_icon_summary"
-        android:fragment="com.chararom.settings.fragments.ui.SignalIcons"/> -->
+        android:fragment="com.crdroid.settings.fragments.ui.SignalIcons"/> -->
 
     <!-- Wifi icon style
     <Preference
@@ -160,5 +160,5 @@
         android:icon="@drawable/ic_wifi"
         android:title="@string/theme_customization_wifi_icon_title"
         android:summary="@string/theme_customization_wifi_icon_summary"
-        android:fragment="com.chararom.settings.fragments.ui.WifiIcons"/> -->
+        android:fragment="com.crdroid.settings.fragments.ui.WifiIcons"/> -->
 </PreferenceScreen>

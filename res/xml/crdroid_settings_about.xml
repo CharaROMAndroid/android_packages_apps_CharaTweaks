@@ -26,7 +26,7 @@
         android:summary="@string/changelog_crdroid_summary">
         <intent android:action="android.intent.action.MAIN"
              android:targetPackage="com.android.settings"
-             android:targetClass="com.chararom.settings.fragments.about.ChangelogActivity"/>
+             android:targetClass="com.crdroid.settings.fragments.about.ChangelogActivity"/>
     </Preference>
 
     <!-- crDroid Website -->
@@ -58,7 +58,7 @@
         android:summary="@string/crdroid_donate_preference_summary">
         <intent android:action="android.intent.action.MAIN"
              android:targetPackage="com.android.settings"
-             android:targetClass="com.chararom.settings.fragments.about.DonateActivity"/>
+             android:targetClass="com.crdroid.settings.fragments.about.DonateActivity"/>
     </Preference>
 
     <!-- crDroid Source -->
