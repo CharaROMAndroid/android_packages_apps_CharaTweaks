@@ -110,8 +110,8 @@
     <string name="crdroid_donate_preference_summary">Donate to support further development</string>
     <string name="crdroid_donate_title">crDroid needs your help!</string>
     <string name="crdroid_donate_notification_text">Tap to learn more</string>
-    <string name="crdroid_donate_message">CharaROM is based mostly on crDroid. crDroid is an open-source project which needs your help to keep website online, our build servers running, and to deliver high-quality builds for your device.\n\n
-A small donation helps keep this project alive and improving. You can dismiss this message, but your support means a lot to us.</string>
+    <string name="crdroid_donate_message">CharaROM is based mostly on crDroid. crDroid is an open-source project which needs your help to keep their website online, their build servers running, and deliver high-quality builds for your device.\n\n
+A small donation helps keep this project, and crDroid, alive and improving. You can dismiss this message, but your support means a lot to us.</string>
     <string name="crdroid_donate_button">Donate now</string>
     <string name="crdroid_later_button">Maybe next month</string>
     <string name="crdroid_channel_name">CharaROM notifications</string>
