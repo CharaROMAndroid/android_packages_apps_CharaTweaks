@@ -192,10 +192,12 @@ class DynamicBar : SettingsPreferenceFragment() {
                 UserHandle.USER_CURRENT
             )
             Settings.Secure.putIntForUser(
+                
                 resolver, SETTINGS_KEY_COMPACT_CHIP_ENABLED, 0,
                 UserHandle.USER_CURRENT
             )
             Settings.Secure.putIntForUser(
+
                 resolver, SETTINGS_KEY_BATTERY_CHIP_MODE, 1,
                 UserHandle.USER_CURRENT
             )

@@ -867,12 +867,8 @@
     <string name="status_bar_logo_summary">상태 표시줄 왼쪽 또는 오른쪽에 사용자 정의 로고 표시</string>
     <string name="status_bar_logo_position_title">로고 위치</string>
     <string name="status_bar_logo_style_title">로고 스타일</string>
-<<<<<<< HEAD
-    <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
-=======
     <string name="status_bar_logo_style_summary">표시될 사용자 지정 로고 선택</string>
     <string name="status_bar_logo_style_crdroid">crDroid</string>
->>>>>>> 9f2bf56c (New Crowdin updates (#1305))
     <string name="status_bar_logo_style_android">안드로이드</string>
     <string name="status_bar_logo_style_adidas">아디다스</string>
     <string name="status_bar_logo_style_alien">외계인</string>
