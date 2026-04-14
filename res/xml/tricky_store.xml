@@ -55,4 +55,14 @@
             android:summary="@string/ts_import_target_list_summary" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="ts_footer_category"
+        android:title="@string/ts_footer_title">
+
+        <com.android.settingslib.widget.FooterPreference
+            android:key="ts_footer"
+            android:title="@string/ts_footer_body"
+            android:selectable="false" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
