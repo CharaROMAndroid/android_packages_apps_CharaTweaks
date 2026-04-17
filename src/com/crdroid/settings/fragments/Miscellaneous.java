@@ -118,6 +118,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.AUTO_BRIGHTNESS_ONE_SHOT, 0, UserHandle.USER_CURRENT);
         SensorBlock.reset(mContext);
+        SystemProperties.set("persist.sys.vbmeta.update", "true");
     }
 
     @Override
