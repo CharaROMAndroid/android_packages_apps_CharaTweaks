@@ -54,14 +54,6 @@
             android:targetPackage="io.chaldeaprjkt.gamespace"
             android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
     </Preference>
-    
-    <!-- Vbmeta hash attestation -->
-    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
-        android:key="persist.sys.vbmeta.update"
-        android:icon="@drawable/ic_hash"
-        android:title="@string/vbmeta_attestation_title"
-        android:summary="@string/vbmeta_attestation_summary"
-        android:defaultValue="true" />
 
     <!-- Application downgrade -->
     <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
