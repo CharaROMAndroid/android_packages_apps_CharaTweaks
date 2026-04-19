@@ -98,7 +98,7 @@ public class BootAnimation extends SettingsPreferenceFragment implements OnPrefe
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mBootAnimationStyle) {
             int style = Integer.parseInt((String) newValue);
-            if (style == 13) { // Custom option selected
+            if (style == 99) { // Custom option selected
                 launchFilePicker();
                 return false; // Return false to prevent immediate property update
             } else {
