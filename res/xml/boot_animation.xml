@@ -20,12 +20,12 @@
     xmlns:lineage="http://schemas.android.com/apk/res-auto"
     android:title="@string/themes_boot_animation_title">
 
-    <org.evolution.settings.preferences.BootAnimationPreviewPreference
+    <com.crdroid.settings.preferences.BootAnimationPreviewPreference
         android:key="boot_animation_preview"
         android:title="@string/boot_animation_preview_title"
         android:summary="@string/boot_animation_preview_summary" />
 
-    <org.evolution.settings.preferences.SystemPropertyListPreference
+    <com.crdroid.settings.preferences.SystemPropertyListPreference
         android:key="persist.sys.bootanimation_style"
         android:title="@string/themes_boot_animation_title"
         android:entries="@array/themes_boot_animation_entries"
