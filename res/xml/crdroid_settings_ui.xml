@@ -85,6 +85,13 @@
             android:targetClass="com.android.axion.axthemestore.MainActivity" />
     </Preference>
 
+    <!-- Boot animation -->
+    <Preference
+        android:key="boot_animation"
+        android:title="@string/themes_boot_animation_title"
+        android:summary="@string/themes_boot_animation_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.BootAnimation" />
+
     <!-- Charging animation -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="charging_animation"
