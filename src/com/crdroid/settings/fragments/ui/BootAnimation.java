@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.themes;
+package com.crdroid.settings.fragments.ui;
 
 import android.app.Activity;
 import android.content.Context;
@@ -214,12 +214,6 @@ public class BootAnimation extends SettingsPreferenceFragment implements OnPrefe
                     sir.xmlResId = R.xml.boot_animation;
                     result.add(sir);
                     return result;
-                }
-
-                @Override
-                public List<String> getNonIndexableKeys(Context context) {
-                    List<String> keys = super.getNonIndexableKeys(context);
-                    return keys;
                 }
             };
 }
