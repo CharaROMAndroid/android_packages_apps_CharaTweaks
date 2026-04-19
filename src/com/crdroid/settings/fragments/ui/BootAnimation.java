@@ -57,9 +57,10 @@ public class BootAnimation extends SettingsPreferenceFragment implements OnPrefe
     private static final String BOOTANIMATION_STYLE_KEY = "persist.sys.bootanimation_style";
     private static final String TAG = "BootAnimationSettings";
     private static final int REQUEST_CODE_PICK_ZIP = 1001;
-    private static final String CUSTOM_BOOTANIMATION_FILE = "/data/misc/bootanim/bootanimation.zip";
+    //private static final String CUSTOM_BOOTANIMATION_FILE = "/data/misc/bootanim/bootanimation.zip";
 
     private static final String[] PRODUCT_BOOT_ANIMATION_FILES = {
+        "/product/media/bootanimation.zip",
         "/product/media/bootanimation_evo_default.zip",
         "/product/media/bootanimation_evo_reveal.zip",
         "/product/media/bootanimation_aokp.zip",
