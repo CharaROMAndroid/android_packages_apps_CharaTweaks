@@ -43,20 +43,22 @@ public class BootAnimationUtils {
     private static final int DEFAULT_FRAME_DURATION = 1000 / 30;
 
     private static final String[] BOOT_ANIMATION_FILES = {
-        "/product/media/bootanimation_evo_default.zip",
-        "/product/media/bootanimation_evo_reveal.zip",
-        "/product/media/bootanimation_aokp.zip",
-        "/product/media/bootanimation_cm.zip",
-        "/product/media/bootanimation_ctos.zip",
-        "/product/media/bootanimation_cyberpunk.zip",
-        "/product/media/bootanimation_du.zip",
-        "/product/media/bootanimation_google.zip",
-        "/product/media/bootanimation_google_monet.zip",
-        "/product/media/bootanimation_pac.zip",
-        "/product/media/bootanimation_rr.zip",
-        "/product/media/bootanimation_slim.zip",
-        "/product/media/bootanimation_valorant.zip",
-        "/data/misc/bootanim/bootanimation.zip",
+        "/product/media/bootanimation.zip", //0
+        "/product/media/bootanimation_evo_default.zip", //1
+        "/product/media/bootanimation_evo_reveal.zip", //2
+        "/product/media/bootanimation_aokp.zip", //3
+        "/product/media/bootanimation_cr.zip", //4
+        "/product/media/bootanimation_cm.zip", //5
+        "/product/media/bootanimation_ctos.zip", //6
+        "/product/media/bootanimation_cyberpunk.zip", //7
+        "/product/media/bootanimation_du.zip", //8
+        "/product/media/bootanimation_google.zip", //9
+        "/product/media/bootanimation_google_monet.zip", //10
+        "/product/media/bootanimation_pac.zip", //11
+        "/product/media/bootanimation_rr.zip", //12
+        "/product/media/bootanimation_slim.zip", //13
+        "/product/media/bootanimation_valorant.zip", //14
+        //"/data/misc/bootanim/bootanimation.zip",
     };
 
     public static AnimationDrawable getBootAnimationFrames(Context context) {

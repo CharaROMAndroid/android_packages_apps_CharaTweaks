@@ -491,20 +491,22 @@
 
    <!-- Themes/Boot animation -->
    <string-array name="themes_boot_animation_entries">
-        <item>Evolution X</item>
-        <item>Evolution X (Reveal)</item>
-        <item>AOKP</item>
-        <item>CyanogenMod</item>
-        <item>ctOS</item>
-        <item>Cyberpunk</item>
-        <item>Dirty Unicorns</item>
-        <item>Google</item>
-        <item>Google (Monet)</item>
-        <item>PAC-ROM</item>
-        <item>Resurrection Remix</item>
-        <item>SlimRoms</item>
-        <item>Valorant</item>
-        <item>Custom</item>
+        <item>CharaROM</item> <!--0-->
+        <item>Evolution X</item> <!--1-->
+        <item>Evolution X (Reveal)</item> <!--2-->
+        <item>AOKP</item> <!--3-->
+        <item>crDroid</item> <!--4-->
+        <item>CyanogenMod</item> <!--5-->
+        <item>ctOS</item> <!--6-->
+        <item>Cyberpunk</item> <!--7-->
+        <item>Dirty Unicorns</item> <!--8-->
+        <item>Google</item> <!--9-->
+        <item>Google (Monet)</item> <!--10-->
+        <item>PAC-ROM</item> <!--11-->
+        <item>Resurrection Remix</item> <!--12-->
+        <item>SlimRoms</item> <!--13-->
+        <item>Valorant</item> <!--14-->
+        <!--<item>Custom</item>-->
     </string-array>
 
     <string-array name="themes_boot_animation_values" translatable="false">
@@ -522,6 +524,8 @@
         <item>11</item> 
         <item>12</item>
         <item>13</item>
+        <item>14</item>
+        <!--<item>99</item>-->
     </string-array>
     
     <!-- Screen off animation -->
