@@ -506,7 +506,7 @@
         <item>Resurrection Remix</item> <!--12-->
         <item>SlimRoms</item> <!--13-->
         <item>Valorant</item> <!--14-->
-        <!--<item>Custom</item>-->
+        <item>Custom</item>
     </string-array>
 
     <string-array name="themes_boot_animation_values" translatable="false">
@@ -525,7 +525,7 @@
         <item>12</item>
         <item>13</item>
         <item>14</item>
-        <!--<item>99</item>-->
+        <item>99</item>
     </string-array>
     
     <!-- Screen off animation -->
