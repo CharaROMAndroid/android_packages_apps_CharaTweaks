@@ -99,7 +99,8 @@
         android:icon="@drawable/ic_android_head"
         android:title="@string/boot_animation_title"
         android:summary="@string/boot_animation_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.BootAnimation" />
+        android:fragment="com.crdroid.settings.fragments.ui.BootAnimation"
+        settings:controller="org.crdroid.settings.fragments.ui.BootAnimationController" / />
 
     <!-- Charging animation -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
