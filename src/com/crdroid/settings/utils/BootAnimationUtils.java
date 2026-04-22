@@ -58,7 +58,7 @@ public class BootAnimationUtils {
         "/product/media/bootanimation_rr.zip", //12
         "/product/media/bootanimation_slim.zip", //13
         "/product/media/bootanimation_valorant.zip", //14
-        "/data/misc/bootanim/bootanimation.zip",
+        // "/data/misc/bootanim/bootanimation.zip", //99
     };
 
     public static AnimationDrawable getBootAnimationFrames(Context context) {
