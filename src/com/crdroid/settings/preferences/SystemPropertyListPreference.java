@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.evolution.settings.preferences;
+package com.crdroid.settings.preferences;
 
 import android.content.Context;
 import android.os.SystemProperties;
