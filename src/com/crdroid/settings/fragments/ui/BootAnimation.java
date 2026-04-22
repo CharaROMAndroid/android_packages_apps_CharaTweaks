@@ -146,10 +146,10 @@ public class BootAnimation extends SettingsPreferenceFragment implements OnPrefe
             // Set permissions to 644 (rw-r--r--) so 'graphics' user can read it
             customBootAnimation.setReadable(true, false);
             // Update system property to use custom boot animation
-            SystemProperties.set(BOOTANIMATION_STYLE_KEY, "13"); // Custom option value
+            SystemProperties.set(BOOTANIMATION_STYLE_KEY, "99"); // Custom option value
             updateBootAnimationPreview();
             // Force the preference to update to the custom option
-            mBootAnimationStyle.setValue("13"); // Set to the custom option
+            mBootAnimationStyle.setValue("99"); // Set to the custom option
             Toast.makeText(getContext(), R.string.boot_animation_applied, Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Log.e(TAG, "Error copying custom boot animation", e);
