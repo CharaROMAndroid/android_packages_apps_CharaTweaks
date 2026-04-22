@@ -55,10 +55,10 @@ public class BootAnimationPreviewPreference extends Preference {
             mCurrentTask.cancel(true);
         }
         int bootAnimStyle = BootAnimationUtils.getBootAnimStyle();
-        if (bootAnimStyle == 7 || bootAnimStyle == 8) {
+        if (bootAnimStyle == 9 || bootAnimStyle == 10) {
             if (mImageView != null) {
                 Drawable drawable = getContext().getDrawable(
-                        bootAnimStyle == 7 ? R.drawable.google_gemini : R.drawable.google_monet);
+                        bootAnimStyle == 9 ? R.drawable.google_gemini : R.drawable.google_monet);
                 mImageView.setImageDrawable(drawable);
             }
         } else {
