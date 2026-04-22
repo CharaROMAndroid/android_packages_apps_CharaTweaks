@@ -88,6 +88,7 @@
     <!-- Boot animation -->
     <Preference
         android:key="boot_animation"
+        android:icon="@drawable/ic_android_head"
         android:title="@string/themes_boot_animation_title"
         android:summary="@string/themes_boot_animation_summary"
         android:fragment="com.crdroid.settings.fragments.ui.BootAnimation" />
