@@ -25,7 +25,7 @@
         android:title="@string/boot_animation_preview_title"
         android:summary="@string/boot_animation_preview_summary" />
 
-    <com.crdroid.settings.preferences.SystemPropertyListPreference
+    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
         android:key="persist.sys.bootanimation_style"
         android:title="@string/themes_boot_animation_title"
         android:entries="@array/themes_boot_animation_entries"
