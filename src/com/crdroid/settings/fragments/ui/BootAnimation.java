@@ -66,7 +66,7 @@ public class BootAnimation extends SettingsPreferenceFragment implements OnPrefe
         "/product/media/bootanimation_aokp.zip",
         "/product/media/bootanimation_cm.zip",
         "/product/media/bootanimation_ctos.zip",
-        "/product/media/bootanimation_cyberpunk.zip",
+        "/product/media/bootanimation_atvr.zip",
         "/product/media/bootanimation_du.zip",
         "/product/media/bootanimation_google.zip",
         "/product/media/bootanimation_google_monet.zip",
