@@ -1800,11 +1800,6 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="gs_save">Save</string>
     <string name="gs_footer_body">The selected game sees the chosen device identity in its Build fields. Games are restarted when their configuration changes. Some games use this to unlock higher frame rates or graphics settings.</string>
 
-    <!-- Build details -->
-    <string name="build_maintainer_title">Device maintainer</string>
-    <string name="build_maintainer_summary">Unofficial</string>
-    <string name="build_maintainer_donate_url" translatable="false">https://crdroid.net/donate</string>
-
     <!-- Settings UI -->
     <string name="settings_icon_title">Settings style</string>
     <string name="settings_icon_summary">Customize Settings app UI style</string>
@@ -1858,5 +1853,18 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="shade_color_style_aosp">Stock Android colors</string>
     <string name="shade_color_style_glass">Clear, frosted panel that lets your wallpaper show through</string>
     <string name="shade_color_style_tinted">Panel tinted with your accent color, with or without blur</string>
+    <!-- Build Details -->
+    <string name="build_maintainer_title">Chaos engineer</string>
+    <string name="build_maintainer_summary">Community</string>
+    <string name="build_maintainer_donate_url" translatable="false">https://paypal.me/bunnypad</string>
+    
+    <!-- Boot Animation-->
+    <string name="themes_boot_animation_title">Boot animation</string>
+    <string name="themes_boot_animation_summary">Set boot animation style</string>
+    <!-- Themes/Boot animation preview -->
+    <string name="boot_animation_preview_desc">Preview of the selected boot animation</string>
+    <string name="boot_animation_preview_summary">Displays a preview of the currently selected boot animation</string>
+    <string name="boot_animation_preview_title">Boot animation preview</string>
+    <string name="boot_animation_applied">Boot animation applied</string>
 </resources>
 
