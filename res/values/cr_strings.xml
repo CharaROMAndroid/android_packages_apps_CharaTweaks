@@ -1621,8 +1621,8 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="gs_failed">Failed: %s</string>
 
     <!-- Build details -->
-    <string name="build_maintainer_title">Device maintainer</string>
-    <string name="build_maintainer_summary">Unofficial</string>
-    <string name="build_maintainer_donate_url" translatable="false">https://crdroid.net/donate</string>
+    <string name="build_maintainer_title">Chaos engineer</string>
+    <string name="build_maintainer_summary">Community</string>
+    <string name="build_maintainer_donate_url" translatable="false">https://paypal.me/bunnypad</string>
 </resources>
 
