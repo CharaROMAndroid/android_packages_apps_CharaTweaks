@@ -1643,11 +1643,6 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="gs_loading_apps">Loading apps\u2026</string>
     <string name="gs_failed">Failed: %s</string>
 
-    <!-- Build details -->
-    <string name="build_maintainer_title">Device maintainer</string>
-    <string name="build_maintainer_summary">Unofficial</string>
-    <string name="build_maintainer_donate_url" translatable="false">https://crdroid.net/donate</string>
-
     <!-- Settings UI -->
     <string name="settings_icon_title">Settings style</string>
     <string name="settings_icon_summary">Customize Settings app UI style</string>
@@ -1693,5 +1688,19 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="reading_engine_mode_title">Comfort display (Reading mode)</string>
     <string name="display_engine_default">Default</string>
     <string name="display_engine_mode_footer_text">Inspired by Sony\'s Bravia/X-Reality engine, the Display Engine features Vivid mode for enhanced brightness and color saturation, X-Reality mode for improved detail and color accuracy, and Triluminous mode for a wider color range.</string>
+
+    <!-- Build Details -->
+    <string name="build_maintainer_title">Chaos engineer</string>
+    <string name="build_maintainer_summary">Community</string>
+    <string name="build_maintainer_donate_url" translatable="false">https://paypal.me/bunnypad</string>
+    
+    <!-- Boot Animation-->
+    <string name="themes_boot_animation_title">Boot animation</string>
+    <string name="themes_boot_animation_summary">Set boot animation style</string>
+    <!-- Themes/Boot animation preview -->
+    <string name="boot_animation_preview_desc">Preview of the selected boot animation</string>
+    <string name="boot_animation_preview_summary">Displays a preview of the currently selected boot animation</string>
+    <string name="boot_animation_preview_title">Boot animation preview</string>
+    <string name="boot_animation_applied">Boot animation applied</string>
 </resources>
 

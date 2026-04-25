@@ -871,12 +871,8 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="status_bar_logo_summary">Exibir um logo personalizado no lado esquerdo ou direito da barra de estado</string>
     <string name="status_bar_logo_position_title">Posição do logótipo</string>
     <string name="status_bar_logo_style_title">Estilo do logótipo</string>
-<<<<<<< HEAD
     <string name="status_bar_logo_style_summary">Selecione um logótipo personalizado a ser apresentado</string>
     <string name="status_bar_logo_style_crdroid">crDroid</string>
-=======
-    <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
->>>>>>> 30851499 (Adding CharaROM Branding/flavor - Text)
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>
