@@ -111,14 +111,14 @@
     <string name="crdroid_donate_preference_summary">Donate to support further development</string>
     <string name="crdroid_donate_title">crDroid needs your help!</string>
     <string name="crdroid_donate_notification_text">Tap to learn more</string>
-    <string name="crdroid_donate_message">CharaROM is based mostly on crDroid. crDroid is an open-source project which needs your help to keep their website online, their build servers running, and deliver high-quality builds for your device.\n\n
-A small donation helps keep this project, and crDroid, alive and improving. You can dismiss this message, but your support means a lot to us.</string>
+    <string name="crdroid_donate_message">CharaROM is based mostly on crDroid. crDroid is an open-source project which needs your help to keep their website online, their build servers running, and help deliver high-quality builds for multiple devices.\n\n
+A small donation helps keep this project, and crDroid, alive and improving. You can dismiss this message, but your support means a lot to us and to them.</string>
     <string name="crdroid_donate_button">Donate now</string>
     <string name="crdroid_later_button">Maybe next month</string>
     <string name="crdroid_channel_name">CharaROM notifications</string>
     <string name="crdroid_channel_desc">Project specific notifications</string>
-    <string name="crdroid_donate_still_needed">We still need €%,d this month. Help us reach our goal.</string>
-    <string name="crdroid_donate_thank_you">We appreciate all donations for this month. You can still contribute and make a difference!</string>
+    <string name="crdroid_donate_still_needed">crDroid still needs €%,d this month. Help them reach their goal.</string>
+    <string name="crdroid_donate_thank_you">crDroid appreciates all donations for this month. You can still contribute and make a difference!</string>
     <string name="crdroid_donate_raised">€%,d raised</string>
     <string name="crdroid_donate_total">of €%,d goal</string>
     <string name="crdroid_donate_loading">Updating progress...</string>
@@ -589,7 +589,7 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="qs_footer_settings_icon_title">Settings shortcut</string>
 
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid legal</string>
+    <string name="crdroid_license_title">crDroid legal</string> <!-- We need to get ours up soon -->
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Brightness slider</string>
@@ -822,6 +822,18 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
 
     <!-- Comss DNS hostname -->
     <string name="private_dns_hostname_comss" translatable="false">dns.comss.one</string>
+
+    <!-- LibreDNS Standard Option -->
+    <string name="private_dns_mode_libredns" translatable="false">LibreDNS</string>
+
+    <!-- LibreDNS Standard Hostname -->
+    <string name="private_dns_hostname_libredns" translatable="false">dot.libredns.gr</string>
+
+    <!-- LibreDNS NoAds Option -->
+    <string name="private_dns_mode_libredns_noads" translatable="false">LibreDNS (NoAds)</string>
+
+    <!-- LibreDNS NoAds Hostname -->
+    <string name="private_dns_hostname_libredns_noads" translatable="false">noads.libredns.gr</string>
 
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
