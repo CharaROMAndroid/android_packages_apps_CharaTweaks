@@ -18,7 +18,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res-auto"
-    android:title="@string/themes_boot_animation_title">
+    android:title="@string/boot_animation_title">
 
     <com.crdroid.settings.preferences.BootAnimationPreviewPreference
         android:key="boot_animation_preview"
@@ -27,9 +27,9 @@
 
     <com.crdroid.settings.preferences.SystemPropertyListPreference
         android:key="persist.sys.bootanimation_style"
-        android:title="@string/themes_boot_animation_title"
-        android:entries="@array/themes_boot_animation_entries"
-        android:entryValues="@array/themes_boot_animation_values"
+        android:title="@string/boot_animation_title"
+        android:entries="@array/boot_animation_entries"
+        android:entryValues="@array/boot_animation_values"
         android:summary="%s"
         android:defaultValue="0" />
         

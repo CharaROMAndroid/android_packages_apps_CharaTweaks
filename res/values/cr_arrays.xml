@@ -490,7 +490,7 @@
     </string-array>
 
    <!-- Themes/Boot animation -->
-   <string-array name="themes_boot_animation_entries">
+   <string-array name="boot_animation_entries">
         <item>CharaROM</item> <!--0-->
         <item>Evolution X</item> <!--1-->
         <item>Evolution X (Reveal)</item> <!--2-->
@@ -509,7 +509,7 @@
         <item>Custom</item>
     </string-array>
 
-    <string-array name="themes_boot_animation_values" translatable="false">
+    <string-array name="boot_animation_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
