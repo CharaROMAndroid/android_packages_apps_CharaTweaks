@@ -494,19 +494,7 @@
         <item>CharaROM</item> <!--0-->
         <item>Evolution X</item> <!--1-->
         <item>Evolution X (Reveal)</item> <!--2-->
-        <item>AOKP</item> <!--3-->
-        <item>crDroid</item> <!--4-->
-        <item>CyanogenMod</item> <!--5-->
-        <item>ctOS</item> <!--6-->
-        <item>Android TV (R)</item> <!--7-->
-        <item>Dirty Unicorns</item> <!--8-->
-        <item>Google</item> <!--9-->
-        <item>Google (Monet)</item> <!--10-->
-        <item>PAC-ROM</item> <!--11-->
-        <item>Resurrection Remix</item> <!--12-->
-        <item>SlimRoms</item> <!--13-->
-        <item>Valorant</item> <!--14-->
-        <item>Custom</item>
+        <item>Meowing Cat</item> <!--3-->
     </string-array>
 
     <string-array name="boot_animation_values" translatable="false">
@@ -514,18 +502,6 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item> 
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>99</item>
     </string-array>
     
     <!-- Screen off animation -->
