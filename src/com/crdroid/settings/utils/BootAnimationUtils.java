@@ -47,15 +47,7 @@ public class BootAnimationUtils {
         "/product/media/bootanimation.zip", //0
         "/product/media/bootanimation_evo_default.zip", //1
         "/product/media/bootanimation_evo_reveal.zip", //2
-        "/product/media/bootanimation_aokp.zip", //3
-        "/product/media/bootanimation_cm.zip", //5
-        "/product/media/bootanimation_ctos.zip", //6
-        "/product/media/bootanimation_du.zip", //8
-        "/product/media/bootanimation_pac.zip", //11
-        "/product/media/bootanimation_rr.zip", //12
-        "/product/media/bootanimation_slim.zip", //13
-        "/product/media/bootanimation_valorant.zip", //14
-        "/data/misc/bootanim/bootanimation.zip", //99
+        "/product/media/bootanimation_meow.zip", //3
     };
 
     /**
