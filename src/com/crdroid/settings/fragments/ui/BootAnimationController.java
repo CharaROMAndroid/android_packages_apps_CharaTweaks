@@ -23,5 +23,7 @@ public class BootAnimationController extends BasePreferenceController {
         if (BootAnimationUtils.isBootAnimationSelectorDisabled()) {
             return UNSUPPORTED_ON_DEVICE;
         }
+        // Return available if the device supports the feature
+        return AVAILABLE;
     }
 }
