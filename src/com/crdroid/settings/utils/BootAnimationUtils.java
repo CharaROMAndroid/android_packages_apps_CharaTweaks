@@ -43,7 +43,7 @@ public class BootAnimationUtils {
     private static final int DEFAULT_FRAME_DURATION = 1000 / 30;
 
 
-    private static final String[] BOOT_ANIMATION_FILES = {
+    public static final String[] BOOT_ANIMATION_FILES = {
         "/product/media/bootanimation.zip", //0
         "/product/media/bootanimation_evo_default.zip", //1
         "/product/media/bootanimation_evo_reveal.zip", //2
