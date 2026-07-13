@@ -489,7 +489,7 @@
         <item>4</item>
     </string-array>
 
-   <!-- Themes/Boot animation -->
+   <!-- Boot animation -->
    <string-array name="boot_animation_entries">
         <item>CharaROM</item> <!--0-->
         <item>Evolution X</item> <!--1-->

@@ -103,7 +103,6 @@ import android.widget.ImageView as AndroidImageView
 
 private const val TAG = "BootAnimationSettings"
 private const val BOOTANIMATION_STYLE_KEY = "persist.sys.bootanimation_style"
-private const val CUSTOM_BOOTANIMATION_FILE = "/data/misc/bootanim/bootanimation.zip"
 
 // ---------------------------------------------------------------------------
 // Fragment
@@ -113,7 +112,7 @@ class BootAnimation : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requireActivity().title = getString(R.string.themes_boot_animation_title)
+        requireActivity().title = getString(R.string.boot_animation_title)
     }
 
     override fun onCreateView(
@@ -138,7 +137,7 @@ class BootAnimation : Fragment() {
 @Composable
 private fun BootAnimationScreen(context: android.content.Context) {
     val scope = rememberCoroutineScope()
-    val styleNames = stringArrayResource(R.array.themes_boot_animation_entries).toList()
+    val styleNames = stringArrayResource(R.array.boot_animation_entries).toList()
 
     var selectedIndex by remember {
         mutableIntStateOf(SystemProperties.getInt(BOOTANIMATION_STYLE_KEY, 0))
@@ -181,33 +180,6 @@ private fun BootAnimationScreen(context: android.content.Context) {
         }
     }
 
-    fun handleCustomPick(uri: Uri) {
-        scope.launch(Dispatchers.IO) {
-            try {
-                val input: InputStream = context.contentResolver.openInputStream(uri)
-                    ?: run { Log.e(TAG, "Could not open stream for $uri"); return@launch }
-                val dest = File(CUSTOM_BOOTANIMATION_FILE).also { it.parentFile?.mkdirs() }
-                FileOutputStream(dest).use { input.copyTo(it) }
-                input.close()
-                dest.setReadable(true, false)
-                withContext(Dispatchers.Main) {
-                    applyStyle(BootAnimationUtils.STYLE_CUSTOM)
-                    Toast.makeText(context, R.string.boot_animation_applied, Toast.LENGTH_SHORT).show()
-                }
-            } catch (e: Exception) {
-                Log.e(TAG, "Error copying custom boot animation", e)
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(context, R.string.boot_animation_applied_error, Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-    }
-
-    // File picker — modern Activity Result API
-    val fileLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.OpenDocument(),
-    ) { uri -> uri?.let { handleCustomPick(it) } }
-
     // Initial load
     LaunchedEffect(Unit) { loadPreview(selectedIndex) }
 
@@ -239,11 +211,7 @@ private fun BootAnimationScreen(context: android.content.Context) {
                 selectedIndex = selectedIndex,
                 thumbnails = thumbnails,
                 onSelect = { index ->
-                    if (index == BootAnimationUtils.STYLE_CUSTOM) {
-                        fileLauncher.launch(arrayOf("application/zip"))
-                    } else {
-                        applyStyle(index)
-                    }
+                    applyStyle(index)
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -387,7 +355,6 @@ private fun StyleSelectorCard(
                 StyleListItem(
                     name = name,
                     isSelected = selectedIndex == index,
-                    isCustom = index == BootAnimationUtils.STYLE_CUSTOM,
                     thumbnail = thumbnails[index],
                     onClick = { onSelect(index) },
                 )
