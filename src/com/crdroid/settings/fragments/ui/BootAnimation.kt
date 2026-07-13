@@ -521,10 +521,7 @@ private fun loadDrawableForStyle(context: android.content.Context, index: Int): 
         Log.w(TAG, "Boot animation zip not found for style $index: $zipPath")
         return null
     }
-    return if (BootAnimationUtils.isAnimatedImageStyle(index))
-        loadAnimatedImageFromZip(zipPath) ?: loadFramesFromPath(context, zipPath)
-    else
-        loadFramesFromPath(context, zipPath)
+    loadFramesFromPath(context, zipPath)
 }
 
 private fun loadFramesFromPath(context: android.content.Context, zipPath: String): AnimationDrawable? {
@@ -575,31 +572,29 @@ private fun loadThumbnailForStyle(context: android.content.Context, index: Int):
 
     return runCatching {
         ZipFile(zipFile).use { zf ->
-            if (BootAnimationUtils.isAnimatedImageStyle(index)) {
-                val entries = zf.entries()
-                while (entries.hasMoreElements()) {
-                    val entry = entries.nextElement()
-                    val name = entry.name.lowercase()
-                    if (!name.contains("/") &&
-                        (name.endsWith(".webp") || name.endsWith(".gif"))
-                    ) {
-                        zf.getInputStream(entry).use { stream ->
-                            val bytes = stream.readBytes()
-                            val src = ImageDecoder.createSource(ByteBuffer.wrap(bytes))
-                            return ImageDecoder.decodeDrawable(src) { dec, _, _ ->
-                                dec.setPostProcessor(null)
-                            }
-                        }
-                    }
-                }
-                return null
+            val entries = zf.entries().asSequence().toList()
+
+            // 1. Try to find an animated image (WebP/GIF) first
+            val animatedEntry = entries.find { 
+                val name = it.name.lowercase()
+                !name.contains("/") && (name.endsWith(".webp") || name.endsWith(".gif"))
             }
 
-            // PNG/JPG frame-based: find a meaningful first frame
+            if (animatedEntry != null) {
+                zf.getInputStream(animatedEntry).use { stream ->
+                    val bytes = stream.readBytes()
+                    val src = ImageDecoder.createSource(ByteBuffer.wrap(bytes))
+                    return@use ImageDecoder.decodeDrawable(src) { dec, _, _ ->
+                        dec.setPostProcessor(null)
+                    }
+                }
+            }
+
+            // 2. Fallback: PNG/JPG frame-based
             val framePattern = Pattern.compile(
                 "part\\d+/.*\\.(png|jpg)$", Pattern.CASE_INSENSITIVE,
             )
-            val frameNames = zf.entries().asSequence()
+            val frameNames = entries.asSequence()
                 .map { it.name }
                 .filter { framePattern.matcher(it).matches() }
                 .sorted()
@@ -610,7 +605,7 @@ private fun loadThumbnailForStyle(context: android.content.Context, index: Int):
                 val bitmap = zf.getInputStream(entry).use { BitmapFactory.decodeStream(it) }
                     ?: continue
                 if (isMeaningfulFrame(bitmap)) {
-                    return BitmapDrawable(context.resources, bitmap)
+                    return@use BitmapDrawable(context.resources, bitmap)
                 }
             }
             null
