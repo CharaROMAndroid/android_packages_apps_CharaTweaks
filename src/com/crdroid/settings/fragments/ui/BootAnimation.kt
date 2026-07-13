@@ -373,7 +373,6 @@ private fun StyleSelectorCard(
 private fun StyleListItem(
     name: String,
     isSelected: Boolean,
-    isCustom: Boolean,
     thumbnail: Drawable?,
     onClick: () -> Unit,
 ) {
@@ -393,7 +392,6 @@ private fun StyleListItem(
         // Leading thumbnail or folder icon — 40×40 with rounded corners
         ThumbnailSlot(
             thumbnail = thumbnail,
-            isCustom = isCustom,
             isSelected = isSelected,
         )
 
@@ -442,7 +440,6 @@ private fun StyleListItem(
 @Composable
 private fun ThumbnailSlot(
     thumbnail: Drawable?,
-    isCustom: Boolean,
     isSelected: Boolean,
 ) {
     val bgColor = if (isSelected)
@@ -458,15 +455,6 @@ private fun ThumbnailSlot(
         contentAlignment = Alignment.Center,
     ) {
         when {
-            isCustom -> Icon(
-                imageVector = Icons.Default.FolderOpen,
-                contentDescription = null,
-                tint = if (isSelected)
-                    MaterialTheme.colorScheme.onPrimaryContainer
-                else
-                    MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.size(22.dp),
-            )
             thumbnail != null -> AndroidView(
                 factory = { ctx ->
                     AndroidImageView(ctx).apply {
