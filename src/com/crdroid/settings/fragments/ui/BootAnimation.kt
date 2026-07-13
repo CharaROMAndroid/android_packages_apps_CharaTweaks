@@ -517,11 +517,15 @@ private fun AnimationPreviewView(
 
 private fun loadDrawableForStyle(context: android.content.Context, index: Int): Drawable? {
     val zipPath = BootAnimationUtils.BOOT_ANIMATION_FILES.getOrNull(index) ?: return null
-    if (!File(zipPath).exists()) {
+    val zipFile = File(zipPath)
+    if (!zipFile.exists()) {
         Log.w(TAG, "Boot animation zip not found for style $index: $zipPath")
         return null
     }
-    loadFramesFromPath(context, zipPath)
+
+    // Attempt to load as an animated image first (GIF/WebP)
+    // If that fails, fallback to frame-based loading
+    return loadAnimatedImageFromZip(zipPath) ?: loadFramesFromPath(context, zipPath)
 }
 
 private fun loadFramesFromPath(context: android.content.Context, zipPath: String): AnimationDrawable? {
