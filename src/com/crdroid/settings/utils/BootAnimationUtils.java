@@ -70,14 +70,6 @@ public class BootAnimationUtils {
         return null;
     }
 
-    /**
-     * Returns true for styles that ship a single animated WebP/GIF at the
-     * zip root rather than a folder of PNG frames.
-     */
-    public static boolean isAnimatedImageStyle(int style) {
-        return style == STYLE_GOOGLE || style == STYLE_GOOGLE_MONET;
-    }
-
     // -----------------------------------------------------------------------
     // Frame extraction (PNG/JPG based animations)
     // -----------------------------------------------------------------------
