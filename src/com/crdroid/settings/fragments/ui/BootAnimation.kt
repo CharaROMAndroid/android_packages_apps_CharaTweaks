@@ -188,7 +188,7 @@ private fun BootAnimationScreen(context: android.content.Context) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .verticalScroll(rememberScrollState()),
+                .navigationBarsPadding()
         ) {
             // ── Preview card ─────────────────────────────────────────────────
             PreviewCard(
@@ -210,12 +210,11 @@ private fun BootAnimationScreen(context: android.content.Context) {
                 styleNames = styleNames,
                 selectedIndex = selectedIndex,
                 thumbnails = thumbnails,
-                onSelect = { index ->
-                    applyStyle(index)
-                },
+                onSelect = { applyStyle(it) },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
+                    .weight(1f)
+                    .padding(horizontal = 16.dp)
             )
 
             Spacer(modifier = Modifier.height(32.dp))
@@ -288,11 +287,11 @@ private fun PreviewCard(
             // Preview viewport — phone-ish 9:16 cropped to a reasonable height
             Box(
                 modifier = Modifier
-                    .fillMaxWidth(0.55f)        // narrow like a phone screen
-                    .aspectRatio(9f / 16f)
-                    .clip(RoundedCornerShape(16.dp))
-                    .background(Color.Black),
-                contentAlignment = Alignment.Center,
+                .fillMaxWidth()
+                .height(180.dp)
+                .clip(RoundedCornerShape(16.dp))
+                .background(Color.Black),
+            contentAlignment = Alignment.Center,
             ) {
                 AnimatedContent(
                     targetState = isLoading to previewDrawable,
