@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_summary">Erweiterte Einstellungen öffnen</string>
+    <string name="crdroid_settings_summary">Lass dein Gerät speziell wie du sein!</string>
     <string name="reset_settings_title">Einstellungen zurücksetzen</string>
     <!-- Personalization Categories -->
     <string name="button_title">Tasten</string>
@@ -68,8 +68,13 @@
     <string name="changelog_crdroid_summary">Änderungen in der installierten ROM anzeigen</string>
     <string name="changelog_crdroid_error">Changelog konnte nicht geladen werden</string>
     <!-- About crDroid -->
+    <string name="about_crdroid">Über CharaROM</string>
     <string name="about_device_name">Gerät</string>
     <!-- Share crDroid -->
+    <string name="share_crdroid_title">Teile CharaROM</string>
+    <string name="share_crdroid_summary">Erzähle den Leuten von CharaROM</string>
+    <string name="share_message">Prüfe doch ob #CharaROMAndroid für dein Gerät verfügbar ist @ https://t.me/bunnypaddev</string>
+    <string name="share_chooser_title">Teile CharaROM</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Wir lieben Open Source, schau doch mal auf unserer GitHub-Seite vorbei</string>
@@ -86,13 +91,13 @@
     <string name="crdroid_donate_preference_title">Unterstütze uns</string>
     <string name="crdroid_donate_preference_summary">Spende, um die Entwicklung zu unterstützen</string>
     <string name="crdroid_donate_notification_text">Tippen, um mehr zu erfahren</string>
-    <string name="crdroid_donate_message">crDroid-Android ist ein Open-Source-Projekt und auf deine Unterstützung angewiesen, damit die Website und unsere Build-Server online bleiben und um dich mit hochwertigen Builds für dein Gerät zu versorgen.\n\n
-Mit einer kleinen Spende trägst du dazu bei, dass das Projekt am Leben bleibt und stetig verbessert wird. Du kannst diese Nachricht wegtippen, aber deine Unterstützung bedeutet uns sehr viel.</string>
+    <string name="crdroid_donate_message">CharaROM basiert größtenteils auf crDroid. crDroid ist ein Open-Source-Projekt, das auf deine Hilfe angewiesen ist, um deren Website online zu halten, die Build-Server am Laufen zu halten und hochwertige Builds für verschiedene Geräte bereitzustellen.\n\n
+Eine kleine Spende trägt dazu bei, dieses Projekt und crDroid am Leben zu erhalten und alles weiter zu verbessern. Du kannst diese Meldung zwar schließen, aber deine Unterstützung bedeutet uns und denen sehr viel.
     <string name="crdroid_donate_button">Jetzt spenden</string>
     <string name="crdroid_later_button">Vielleicht nächsten Monat</string>
     <string name="crdroid_channel_desc">Projektspezifische Benachrichtigungen</string>
-    <string name="crdroid_donate_still_needed">Diesen Monat fehlen uns noch €%,d. Hilf uns dabei, unser Ziel zu erreichen.</string>
-    <string name="crdroid_donate_thank_you">Wir sagen Danke für alle bisherigen Spenden dieses Monats. Mit deinem Beitrag kannst du auch jetzt noch etwas bewirken!</string>
+    <string name="crdroid_donate_still_needed">crDroid braucht immer noch €%,d für diesen Monat. Hilf ihnen dieses Ziel zu erreichen.</string>
+    <string name="crdroid_donate_thank_you">crDroid bedankt sich für jede Spende, die diesen Monat reinkam. Du kannst immer noch eine Spende leisten und etwas bewirken!</string>
     <string name="crdroid_donate_raised">€%,d aufgebracht</string>
     <string name="crdroid_donate_total">von unserem Gesamtziel von €%,d</string>
     <string name="crdroid_donate_loading">Fortschritt wird aktualisiert …</string>
@@ -1432,4 +1437,19 @@ Mit einer kleinen Spende trägst du dazu bei, dass das Projekt am Leben bleibt u
     <string name="reading_engine_mode_title">Komfortanzeige (Lesemodus)</string>
     <string name="display_engine_default">Standard</string>
     <string name="display_engine_mode_footer_text">Inspiriert von Sony\'s Bravia/X-Reality engine, hat die Display engine den gesättigten Modus für verbesserte Helligkeit und Sättigung, den X-Reality Modus für verbesserte Details und Farbwiedergabe und den Triluminous Modus für ein breiteres Farbspektrum. </string>
+
+    <!-- Boot Animation-->
+    <string name="boot_animation_title">Boot animation</string>
+    <string name="boot_animation_summary">Setze Bootanimation Stil</string>
+    <string name="boot_animation_custom_pick">Wähle eine ZIP Datei</string>
+    <string name="boot_animation_custom_pick_summary">Wähle eine eigene bootanimation.zip</string>
+    <string name="boot_animation_applied_error">Konnte boot animation nicht festlegen</string>
+    <string name="boot_animation_preview_loading">Lade Vorschau…</string>
+    <string name="boot_animation_preview_desc">Vorschau der gewählten Bootanimation</string>
+    <string name="boot_animation_preview_summary">Zeigt eine Vorschau der momentan gewählten Bootanimation an</string>
+    <string name="boot_animation_preview_title">Bootanimation Vorschau</string>
+    <string name="boot_animation_applied">Bootanimation wurde eingestellt</string>
+    <string name="boot_animation_no_preview">Keine Vorschau verfügbar</string>
+    <string name="boot_animation_style_unknown">Unbekannt</string>
+
 </resources>
