@@ -16,8 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_summary">Spersonalizuj swój system</string>
+    <string name="crdroid_settings_title">Ustawienia CharaROM</string>
+    <string name="crdroid_settings_summary">Spraw że Twoje urządzenie będzie unikatowo Twoje!</string>
     <string name="reset_settings_title">Zresetuj ustawienia</string>
+    <string name="reset_settings_message">To zresetuje większość ustawień CharaROM do ich domyślnych wartości. Czy chcesz kontynuować?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Przyciski</string>
     <string name="lockscreen_title">Ekran blokady</string>
@@ -72,29 +74,30 @@
     <!-- Share crDroid -->
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
-    <string name="crdroid_source_summary">Kochamy otwarty kod źródłowy, sprawdź nas</string>
+    <string name="crdroid_source_summary">Kochamy otwarty kod źródłowy, sprawdź nas na GitHubie!</string>
     <string name="crdroid_telegram_summary">Jesteśmy na Telegramie. Dołącz do nas!</string>
     <string name="crdroid_telegram_channel_title">Kanał aktualizacji</string>
     <string name="crdroid_telegram_channel_summary">Otrzymuj powiadomienia o nowych wersjach na Telegramie</string>
-    <string name="crdroid_website_title">Oficjalna strona</string>
-    <string name="crdroid_website_summary">Odwiedź naszą oficjalną stronę</string>
+    <string name="crdroid_website_title">Oficjalna strona internetowa</string>
+    <string name="crdroid_website_summary">Odwiedź naszą oficjalną stronę internetową</string>
     <string name="crdroid_translate_title">Tłumaczenia</string>
     <string name="crdroid_translate_summary">Pomóż w tłumaczeniu systemu na swój język!</string>
     <string name="crdroid_sponsor_summary">Odwiedź naszego hosta strony internetowej</string>
-    <string name="crdroid_buildserversponsor_summary">Polecamy ich serwery, jeśli interesuje cię jakiś</string>
+    <string name="crdroid_buildserversponsor_summary">Polecamy ich serwery, jeśli jakiegoś szukasz</string>
     <!-- Support crDroid -->
     <string name="crdroid_donate_preference_title">Wesprzyj nas</string>
     <string name="crdroid_donate_preference_summary">Wspomóż dalszy rozwój</string>
     <string name="crdroid_donate_notification_text">Dotknij, aby dowiedzieć się więcej</string>
-    <string name="crdroid_donate_message">crDroid Android to projekt o otwartym kodzie źródłowym, który potrzebuje Twojej pomocy, aby utrzymać stronę internetową online, zapewnić działanie naszych serwerów kompilacyjnych i dostarczać wysokiej jakości kompilacje dla Twojego urządzenia.\n\n
-Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignorować tę wiadomość, ale Twoje wsparcie ma dla nas ogromne znaczenie.</string>
+    <string name="crdroid_donate_message">CharaROM jest bazowane na projekcie crDroid. crDroid to projekt o otwartym kodzie źródłowym, który potrzebuje Twojej pomocy, aby utrzymać stronę internetową online, zapewnić działanie naszych serwerów kompilacyjnych i dostarczać wysokiej jakości kompilacje dla wielu urządzeń.\n\n
+Niewielka darowizna pomaga utrzymać ten projekt i crDroid, ulepszać je. Możesz zignorować tę wiadomość, ale Twoje wsparcie ma ogromne znaczenie dla nas i dla projektu crDroid.</string>
     <string name="crdroid_donate_button">Przekaż darowiznę</string>
     <string name="crdroid_later_button">Może w przyszłym miesiącu</string>
-    <string name="crdroid_channel_desc">Powiadomienia konkretnego projektu</string>
-    <string name="crdroid_donate_still_needed">W tym miesiącu nadal potrzebujemy €%,d. Pomóż nam osiągnąć nasz cel.</string>
-    <string name="crdroid_donate_thank_you">Doceniamy wszystkie darowizny w tym miesiącu. Nadal możesz wnieść swój wkład i coś zmienić!</string>
+    <string name="crdroid_channel_name">Powiadomienia CharaROM</string>
+    <string name="crdroid_channel_desc">Powiadomienia projektu</string>
+    <string name="crdroid_donate_still_needed">W tym miesiącu crDroid nadal potrzebują €%,d. Pomóż im osiągnąć ich cel.</string>
+    <string name="crdroid_donate_thank_you">crDroid docenia wszystkie darowizny w tym miesiącu. Nadal możesz wnieść swój wkład i coś zmienić!</string>
     <string name="crdroid_donate_raised">€%,d zebrano</string>
-    <string name="crdroid_donate_total">z €%,d cel</string>
+    <string name="crdroid_donate_total">cel €%,d</string>
     <string name="crdroid_donate_loading">Aktualizacja postępów...</string>
     <!-- OTA -->
     <string name="crdroid_update_title">Aktualizacje</string>
@@ -107,7 +110,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="longpress_to_clipboard">Przytrzymaj, aby skopiować</string>
     <!-- Hardware info -->
     <string name="platform_revision">Platforma</string>
-    <string name="total_ram">Całkowita pamięć RAM</string>
+    <string name="total_ram">Całkowita ilość pamięci RAM</string>
     <!-- Notification log -->
     <string name="notification_log_summary">Pokaż historię powiadomień</string>
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
@@ -515,6 +518,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="qs_footer_services_icon_title">Skrót do działających usług</string>
     <string name="qs_footer_settings_icon_title">Skrót do ustawień</string>
     <!-- Device Info screen. crDroid legal. -->
+     <string name="crdroid_license_title">Licencje crDroid</string> <!-- We need to get ours up soon/Musimy załączyć swoje -->
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Pasek jasności</string>
     <string name="qs_show_brightness_slider_title">Kiedy pokazywać</string>
@@ -754,6 +758,9 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
         <item quantity="few">Maksymalnie <xliff:g id="device_num">%1$d</xliff:g> urządzenia mogą się połączyć z tym punktem dostępu</item>
         <item quantity="many">Maksymalnie <xliff:g id="device_num">%1$d</xliff:g> urządzeń może się połączyć z tym punktem dostępu</item>
     </plurals>
+     <!-- Boot Animation-->
+    <string name="themes_boot_animation_title">Animacja startu</string>
+    <string name="themes_boot_animation_summary">Ustaw styl animacji startu</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Menu zasilania</string>
     <string name="lockscreen_enable_power_menu_summary">Zezwalaj na dostęp do menu zasilania z poziomu zabezpieczonego ekranu blokady</string>
@@ -848,7 +855,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="solid_gradient_light">Lekki gradient</string>
     <string name="solid_gradient_shape">Ostry gradientowy narożnik</string>
     <string name="solid_gradient_void_light">Lekka gradientowa pustka</string>
-    <!-- Weather -->
+     <!-- Weather -->
     <string name="weather_settings_title">Ustawienia pogody</string>
     <string name="weather_settings_summary">Ustaw pakiet ikon i usługę pogody</string>
     <string name="lockscreen_weather_category">Pogoda</string>
@@ -1440,4 +1447,22 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="reading_engine_mode_title">Wygodny ekran (tryb czytania)</string>
     <string name="display_engine_default">Domyślny</string>
     <string name="display_engine_mode_footer_text">Zainspirowany silnikiem Bravia/X-Reality firmy Sony, silnik wyświetlania oferuje tryb Żywy dla większej jasności i nasycenia kolorów. Tryb X-Reality poprawia szczegółowość i dokładność kolorów, a Trójświetlny zapewnia wyjątkowo precyzyjne odwzorowanie barw.</string>
+     <!-- Build Details -->
+    <string name="build_maintainer_title">Inżynier chaosu</string>
+    <string name="build_maintainer_summary">Społeczność</string>
+    
+    <!-- Boot Animation-->
+    <string name="themes_boot_animation_title">Animacja startu</string>
+    <string name="themes_boot_animation_summary">Ustaw styl animacji startu</string>
+    <!-- Themes/Boot animation preview -->
+    <string name="boot_animation_preview_desc">Podgląd wybranej animacji startu</string>
+    <string name="boot_animation_preview_summary">Pokazuje podgląd wybranej animacji startu</string>
+    <string name="boot_animation_preview_title">Podgląd animacji startu</string>
+    <string name="boot_animation_applied">Animacja startu została zaaplikowana</string>
+     <string name="boot_animation_custom_pick">Wybierz plik ZIP</string>
+    <string name="boot_animation_custom_pick_summary">Wybierz własny bootanimation.zip</string>
+    <string name="boot_animation_applied_error">Aplikowanie wybranej animacji startu nie powiodło się</string>
+    <string name="boot_animation_preview_loading">Ładowanie podglądu…</string>
+     <string name="boot_animation_no_preview">Nie ma dostępnego podglądu</string>
+    <string name="boot_animation_style_unknown">Nieznane</string>
 </resources>
