@@ -34,10 +34,6 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Выбор цвета</string>
     <string name="press_color_to_apply">Нажмите на выбранный цвет для применения</string>
-    <string name="arrow_right" translatable="false">→</string>
-    <string name="arrow_down" translatable="false">↓</string>
-    <string name="hex" translatable="false">Hex:</string>
-    <string name="hex_hint" translatable="false">#ff000000</string>
     <string name="set">Применить</string>
     <string name="color_default">По умолчанию</string>
     <!-- General strings -->
@@ -69,11 +65,10 @@
     <string name="select_all">Выбрать все</string>
     <string name="auto_select">Автовыбор</string>
     <string name="system_badge">SYS</string>
-  <!-- Changelog -->
-    <string name="changelog_crdroid_title">Current changelog</string>
-    <string name="changelog_crdroid_summary">View changes in the ROM installed</string>
-    <string name="changelog_crdroid_error">Unable to load changelog</string>
-
+    <!-- Changelog -->
+    <string name="changelog_crdroid_title">Список изменений</string>
+    <string name="changelog_crdroid_summary">Просмотр изменений установленной прошивки</string>
+    <string name="changelog_crdroid_error">Невозможно загрузить список изменений</string>
     <!-- About crDroid -->
     <string name="about_crdroid">О CharaROM</string>
     <string name="about_device_name">Устройство</string>
@@ -95,9 +90,7 @@
     <string name="crdroid_website_summary">Посетите наш официальный сайт</string>
     <string name="crdroid_translate_title">Переводы</string>
     <string name="crdroid_translate_summary">Помогите с локализацией ROM на ваш язык!</string>
-    <string name="crdroid_sponsor_title" translatable="false">ScopeHosts</string>
     <string name="crdroid_sponsor_summary">Посетите сайт нашего партнера по размещению сайтов</string>
-    <string name="crdroid_buildserversponsor_title" translatable="false">InterServer</string>
     <string name="crdroid_buildserversponsor_summary">Если вас интересует работа серверов, мы рекомендуем обратиться к ним</string>
 
     <!-- Support crDroid -->
@@ -123,8 +116,6 @@
     <!-- Units -->
     <string name="unit_seconds">сек.</string>
     <string name="unit_milliseconds">мс.</string>
-    <string name="unit_pixels" translatable="false">dp</string>
-    <string name="unit_hz" translatable="false">hz</string>
     <!-- Clipboard -->
     <string name="copied_to_clipboard">Скопировано в буфер</string>
     <string name="longpress_to_clipboard">Удерживайте для копирования</string>
@@ -221,6 +212,8 @@
     <string name="backlight_summary_enabled">Включена</string>
     <plurals name="backlight_timeout_time">
         <item quantity="one"><xliff:g id="seconds">%d</xliff:g> сек.</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> сек.</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> сек.</item>
         <item quantity="other"><xliff:g id="seconds">%d</xliff:g> сек.</item>
     </plurals>
     <!-- Power menu -->
