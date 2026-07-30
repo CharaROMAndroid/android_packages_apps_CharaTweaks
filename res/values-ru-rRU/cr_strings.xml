@@ -16,8 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
+    <string name="crdroid_settings_title">Модификации CharaROM</string>
     <string name="crdroid_settings_summary">Здесь происходит волшебство</string>
     <string name="reset_settings_title">Сбросить настройки</string>
+    <string name="reset_settings_message">Это действие сбросит все настройки для текущего пользователя. Хочешь продолжить?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Кнопки</string>
     <string name="lockscreen_title">Экран блокировки</string>
@@ -32,6 +34,10 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Выбор цвета</string>
     <string name="press_color_to_apply">Нажмите на выбранный цвет для применения</string>
+    <string name="arrow_right" translatable="false">→</string>
+    <string name="arrow_down" translatable="false">↓</string>
+    <string name="hex" translatable="false">Hex:</string>
+    <string name="hex_hint" translatable="false">#ff000000</string>
     <string name="set">Применить</string>
     <string name="color_default">По умолчанию</string>
     <!-- General strings -->
@@ -63,45 +69,62 @@
     <string name="select_all">Выбрать все</string>
     <string name="auto_select">Автовыбор</string>
     <string name="system_badge">SYS</string>
-    <!-- Changelog -->
-    <string name="changelog_crdroid_title">Список изменений</string>
-    <string name="changelog_crdroid_summary">Просмотр изменений установленной прошивки</string>
-    <string name="changelog_crdroid_error">Невозможно загрузить список изменений</string>
+  <!-- Changelog -->
+    <string name="changelog_crdroid_title">Current changelog</string>
+    <string name="changelog_crdroid_summary">View changes in the ROM installed</string>
+    <string name="changelog_crdroid_error">Unable to load changelog</string>
+
     <!-- About crDroid -->
+    <string name="about_crdroid">О CharaROM</string>
     <string name="about_device_name">Устройство</string>
+
     <!-- Share crDroid -->
+    <string name="share_crdroid_title">Поделиться CharaROM</string>
+    <string name="share_crdroid_summary">Пусть все знают о CharaROM</string>
+    <string name="share_message">Проверьте, доступна ли #CharaROMAndroid для вашего устройства, по ссылке: https://t.me/bunnypaddev</string>
+    <string name="share_chooser_title">Поделиться CharaROM</string>
+
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
-    <string name="crdroid_source_summary">Мы любим открытый исходный код, посмотрите его</string>
-    <string name="crdroid_telegram_summary">Мы в Telegram. Присоединяйтесь!</string>
+    <string name="crdroid_source_summary">Мы любим открытый исходный код — заглядывай к нам</string>
+    <string name="crdroid_telegram_title">Сообщетсво CharaROM</string>
+    <string name="crdroid_telegram_summary">Мы есть в Telegram. Присоединяйтесь!</string>
     <string name="crdroid_telegram_channel_title">Канал обновлений</string>
-    <string name="crdroid_telegram_channel_summary">Получать уведомления о новых сборках в Telegram</string>
+    <string name="crdroid_telegram_channel_summary">Получайте уведомления о новых сборках в Telegram</string>
     <string name="crdroid_website_title">Официальный сайт</string>
-    <string name="crdroid_website_summary">Посетить наш официальный сайт</string>
+    <string name="crdroid_website_summary">Посетите наш официальный сайт</string>
     <string name="crdroid_translate_title">Переводы</string>
-    <string name="crdroid_translate_summary">Помогите перевести прошивку на ваш язык!</string>
-    <string name="crdroid_sponsor_summary">Посетите нашего партнёра по размещению веб-сайтов</string>
-    <string name="crdroid_buildserversponsor_summary">Мы рекомендуем их серверы, если вы заинтересованы в одном из них</string>
+    <string name="crdroid_translate_summary">Помогите с локализацией ROM на ваш язык!</string>
+    <string name="crdroid_sponsor_title" translatable="false">ScopeHosts</string>
+    <string name="crdroid_sponsor_summary">Посетите сайт нашего партнера по размещению сайтов</string>
+    <string name="crdroid_buildserversponsor_title" translatable="false">InterServer</string>
+    <string name="crdroid_buildserversponsor_summary">Если вас интересует работа серверов, мы рекомендуем обратиться к ним</string>
+
     <!-- Support crDroid -->
-    <string name="crdroid_donate_preference_title">Поддержать нас</string>
-    <string name="crdroid_donate_preference_summary">Пожертвования для дальнейшего развития</string>
-    <string name="crdroid_donate_notification_text">Подробнее</string>
-    <string name="crdroid_donate_message">crDroid Android - это проект с открытым исходным кодом, который нуждается в Вашей помощи для поддержания web-сайта в рабочем состоянии, работы наших серверов сборки и предоставления высококачественных сборок для Вашего устройства.\n\n
-Небольшое пожертвование поможет поддерживать этот проект в рабочем состоянии и улучшать его. Вы можете отказаться от этого сообщения, но Ваша поддержка очень много значит для нас.</string>
-    <string name="crdroid_donate_button">Пожертвовать</string>
-    <string name="crdroid_later_button">Может, в следующем месяце</string>
-    <string name="crdroid_channel_desc">Уведомления, относящиеся к проекту</string>
-    <string name="crdroid_donate_still_needed">Нам всё ещё необходимо €%,d в этом месяце. Помогите нам достичь цели.</string>
-    <string name="crdroid_donate_thank_you">Мы ценим все пожертвования за этот месяц. Вы всё ещё можете внести свой вклад и изменить ситуацию к лучшему!</string>
-    <string name="crdroid_donate_raised">€%,d достигнуто</string>
-    <string name="crdroid_donate_total">из €%,d необходимого</string>
-    <string name="crdroid_donate_loading">Прогресс обновления...</string>
+    <string name="crdroid_donate_preference_title">Поддержите нас</string>
+    <string name="crdroid_donate_preference_summary">Пожертвуйте на поддержку дальнейшей разработки</string>
+    <string name="crdroid_donate_title">crDroid нужна ваша помощь!</string>
+    <string name="crdroid_donate_notification_text">Нажмите, чтобы узнать больше</string>
+    <string name="crdroid_donate_message">CharaROM в основном базируется на crDroid. crDroid — это проект с открытым исходным кодом; ему необходима ваша помощь для поддержания работы веб-сайта и серверов сборки, а также для выпуска качественных прошивок для множества устройств. \n\n
+Даже небольшое пожертвование помогает поддерживать жизнь и развитие как этого проекта, так и crDroid. Вы можете закрыть это сообщение, но ваша поддержка очень важна и для нас, и для них.</string>
+    <string name="crdroid_donate_button">Пожертвовать сейчас</string>
+    <string name="crdroid_later_button">Может быть, в следующем месяце</string>
+    <string name="crdroid_channel_name">Уведомления CharaROM</string>
+    <string name="crdroid_channel_desc">Уведомления по конкретному проекту</string>
+    <string name="crdroid_donate_still_needed">Проекту crDroid в этом месяце всё ещё требуется €%,d. Помогите им достичь цели.</string>
+    <string name="crdroid_donate_thank_you">Команда crDroid благодарна за все пожертвования, сделанные в этом месяце. Вы всё ещё можете внести свой вклад и помочь делу!</string>
+    <string name="crdroid_donate_raised">€%,d поднятый</string>
+    <string name="crdroid_donate_total">of €%,d цель</string>
+    <string name="crdroid_donate_loading">Обновление хода выполнения...</string>
+
     <!-- OTA -->
     <string name="crdroid_update_title">Обновления</string>
-    <string name="crdroid_update_summary">Проверка и загрузка последних обновлений</string>
+    <string name="crdroid_update_summary">Проверить и загрузить последнее обновление</string>
     <!-- Units -->
     <string name="unit_seconds">сек.</string>
     <string name="unit_milliseconds">мс.</string>
+    <string name="unit_pixels" translatable="false">dp</string>
+    <string name="unit_hz" translatable="false">hz</string>
     <!-- Clipboard -->
     <string name="copied_to_clipboard">Скопировано в буфер</string>
     <string name="longpress_to_clipboard">Удерживайте для копирования</string>
@@ -198,8 +221,6 @@
     <string name="backlight_summary_enabled">Включена</string>
     <plurals name="backlight_timeout_time">
         <item quantity="one"><xliff:g id="seconds">%d</xliff:g> сек.</item>
-        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> сек.</item>
-        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> сек.</item>
         <item quantity="other"><xliff:g id="seconds">%d</xliff:g> сек.</item>
     </plurals>
     <!-- Power menu -->
@@ -1438,4 +1459,22 @@
     <string name="reading_engine_mode_title">Комфортный (режим чтения)</string>
     <string name="display_engine_default">По умолчанию</string>
     <string name="display_engine_mode_footer_text">Движок отрисовки экрана, создан на основе технологии Sony Bravia/X-Reality Engine, поддерживает режим «Яркий экран» для повышения яркости и насыщенности цветов, режим «X-Reality» для улучшения детализации и точности цветопередачи, а также режим «Трёхцветный экран», для расширения цветового диапазона.</string>
+    <!-- Build Details -->
+    <string name="build_maintainer_title">Инженер хаоса</string>
+    <string name="build_maintainer_summary">Сообщетсво</string>
+    <string name="build_maintainer_donate_url" translatable="false">https://paypal.me/bunnypad</string>
+    
+    <!-- Boot Animation-->
+    <string name="boot_animation_title">Boot-анимация</string>
+    <string name="boot_animation_summary">Поставить свою Boot-анимацию</string>
+    <string name="boot_animation_custom_pick">Выберите файл в котором содержиться Boot-анимация, в формате .zip</string>
+    <string name="boot_animation_custom_pick_summary">Выберите кастомную анимацию загрузки (bootanimation.zip)</string>
+    <string name="boot_animation_applied_error">Не удалось применить анимацию!</string>
+    <string name="boot_animation_preview_loading">Загрузка превью…</string>
+    <string name="boot_animation_preview_desc">Превью выбранной аннимации</string>
+    <string name="boot_animation_preview_summary">Отображает предварительный просмотр (превью) выбранной в данный момент анимации загрузки</string>
+    <string name="boot_animation_preview_title">Превью Boot-анимации</string>
+    <string name="boot_animation_applied">Boot-анимация применена</string>
+    <string name="boot_animation_no_preview">Превью недоступно</string>
+    <string name="boot_animation_style_unknown">Неизвестно</string>
 </resources>
