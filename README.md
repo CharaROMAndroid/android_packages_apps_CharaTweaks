@@ -1,4 +1,4 @@
-# CharaTweaks (Settings submodule) repo #
-
-### Description ###
-All the chaos happens here =)
+# CharaTweaks перевод на русский #
+RU-ru
+### Описание ###
+Весь хаос происходит здесь =)
