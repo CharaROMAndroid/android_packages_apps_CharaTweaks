@@ -94,7 +94,7 @@
     <string name="crdroid_donate_message">CharaROM basiert größtenteils auf crDroid. crDroid ist ein Open-Source-Projekt, das auf deine Hilfe angewiesen ist, um deren Website online zu halten, die Build-Server am Laufen zu halten und hochwertige Builds für verschiedene Geräte bereitzustellen.\n\n
 Eine kleine Spende trägt dazu bei, dieses Projekt und crDroid am Leben zu erhalten und alles weiter zu verbessern. Du kannst diese Meldung zwar schließen, aber deine Unterstützung bedeutet uns und denen sehr viel.
     <string name="crdroid_donate_button">Jetzt spenden</string>
-    <string name="crdroid_later_button">Vielleicht nächsten Monat</string>
+    <string name="crdroid_later_button">Vielleicht nächsten Monat</string></string>
     <string name="crdroid_channel_desc">Projektspezifische Benachrichtigungen</string>
     <string name="crdroid_donate_still_needed">crDroid braucht immer noch €%,d für diesen Monat. Hilf ihnen dieses Ziel zu erreichen.</string>
     <string name="crdroid_donate_thank_you">crDroid bedankt sich für jede Spende, die diesen Monat reinkam. Du kannst immer noch eine Spende leisten und etwas bewirken!</string>
