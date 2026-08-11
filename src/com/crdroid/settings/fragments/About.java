@@ -45,8 +45,8 @@ public class About extends SettingsPreferenceFragment {
     private String KEY_CRDROID_TRANSLATE = "crdroid_translate";
     private String KEY_CRDROID_WEBSITE = "crdroid_website";
     private String KEY_CRDROID_TELEGRAM_CHANNEL = "crdroid_telegram_channel";
-    private String KEY_CRDROID_SPONSOR = "crdroid_sponsor";
-    private String KEY_CRDROID_BUILDSERVERSPONSOR = "crdroid_buildserversponsor";
+    private String KEY_CHARA_BLOG = "chara_blog";
+    private String KEY_CHARAROM_TEAM = "chararom_team";
 
     private Preference mSourceUrl;
     private Preference mTelegramUrl;
@@ -54,8 +54,8 @@ public class About extends SettingsPreferenceFragment {
     private Preference mTranslate;
     private Preference mWebsite;
     private Preference mTelegramChannelUrl;
-    private Preference mSponsor;
-    private Preference mBuildServerSponsor;
+    private Preference mCharablog;
+    private Preference mCharaROMTeam;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,8 +68,8 @@ public class About extends SettingsPreferenceFragment {
         mTranslate = findPreference(KEY_CRDROID_TRANSLATE);
         mWebsite = findPreference(KEY_CRDROID_WEBSITE);
         mTelegramChannelUrl = findPreference(KEY_CRDROID_TELEGRAM_CHANNEL);
-        mSponsor = findPreference(KEY_CRDROID_SPONSOR);
-        mBuildServerSponsor = findPreference(KEY_CRDROID_BUILDSERVERSPONSOR);
+        mCharablog = findPreference(KEY_CHARA_BLOG);
+        mCharaROMTeam = findPreference(KEY_CHARAROM_TEAM);
     }
 
     @Override
@@ -91,10 +91,10 @@ public class About extends SettingsPreferenceFragment {
             launchUrl("https://github.com/chararomandroid");
         } else if (preference == mTelegramChannelUrl) {
             launchUrl("https://t.me/bunnypaddev");
-        } else if (preference == mSponsor) {
-            launchUrl("https://www.scopehosts.com");
-        } else if (preference == mBuildServerSponsor){
-            launchUrl("https://www.interserver.net/r/836686");
+        } else if (preference == mCharablog) {
+            launchUrl("https://blog.chararom.xyz");
+        } else if (preference == mCharaROMTeam){
+            launchUrl("https://team.chararom.xyz");
         }
 
         return super.onPreferenceTreeClick(preference);
