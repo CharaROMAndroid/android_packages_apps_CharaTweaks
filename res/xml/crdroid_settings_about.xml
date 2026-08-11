@@ -84,17 +84,17 @@
 
     <!-- crDroid buildserver sponsor -->
     <Preference
-        android:key="crdroid_buildserversponsor"
-        android:icon="@drawable/ic_sponsor"
-        android:title="@string/crdroid_buildserversponsor_title"
-        android:summary="@string/crdroid_buildserversponsor_summary" />
+        android:key="chara_blog"
+        android:icon="@drawable/ic_blog"
+        android:title="@string/chara_blog_title"
+        android:summary="@string/chara_blog_summary" />
 
     <!-- crDroid sponsor -->
     <Preference
-        android:key="crdroid_sponsor"
-        android:icon="@drawable/ic_sponsor"
-        android:title="@string/crdroid_sponsor_title"
-        android:summary="@string/crdroid_sponsor_summary" />
+        android:key="chararom_team"
+        android:icon="@drawable/ic_team"
+        android:title="@string/chararom_team_title"
+        android:summary="@string/chararom_team_summary" />
 
     <!-- crDroid OTA update -->
     <Preference

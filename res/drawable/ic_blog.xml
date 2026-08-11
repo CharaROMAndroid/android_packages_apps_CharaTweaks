@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 CharaROM Android
+     Referenced from https://fonts.google.com/icons?icon.style=Rounded&icon.size=24&icon.color=%231f1f1f&icon.query=team&icon.platform=android
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal"
+    android:autoMirrored="true">
+  <path
+      android:fillColor="@android:color/white"
+      android:pathData="M5,21Q4.17,21 3.59,20.41Q3,19.82 3,19L3,5Q3,4.17 3.59,3.59Q4.17,3 5,3L15.18,3Q15.57,3 15.94,3.15Q16.3,3.3 16.57,3.58L20.43,7.42Q20.7,7.7 20.85,8.06Q21,8.43 21,8.82L21,19Q21,19.82 20.41,20.41Q19.82,21 19,21L5,21ZM5,19L19,19Q19,19 19,19Q19,19 19,19L19,9L16,9Q15.57,9 15.29,8.71Q15,8.43 15,8L15,5L5,5Q5,5 5,5Q5,5 5,5L5,19Q5,19 5,19Q5,19 5,19ZM16,17Q16.43,17 16.71,16.71Q17,16.43 17,16Q17,15.57 16.71,15.29Q16.43,15 16,15L8,15Q7.58,15 7.29,15.29Q7,15.57 7,16Q7,16.43 7.29,16.71Q7.58,17 8,17L16,17ZM11,9Q11.43,9 11.71,8.71Q12,8.43 12,8Q12,7.58 11.71,7.29Q11.43,7 11,7L8,7Q7.58,7 7.29,7.29Q7,7.58 7,8Q7,8.43 7.29,8.71Q7.58,9 8,9L11,9ZM16,13Q16.43,13 16.71,12.71Q17,12.43 17,12Q17,11.57 16.71,11.29Q16.43,11 16,11L8,11Q7.58,11 7.29,11.29Q7,11.57 7,12Q7,12.43 7.29,12.71Q7.58,13 8,13L16,13ZM5,5L5,5L5,9L5,9L5,5L5,9L5,9L5,19Q5,19 5,19Q5,19 5,19L5,19Q5,19 5,19Q5,19 5,19L5,5Q5,5 5,5Q5,5 5,5Z"/>
+</vector>
