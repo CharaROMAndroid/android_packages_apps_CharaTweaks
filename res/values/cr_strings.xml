@@ -261,6 +261,8 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="power_menu_logout_title">Logout</string>
     <string name="power_menu_emergency_title">Emergency</string>
     <string name="power_menu_devicecontrols_title">Device controls</string>
+    <string name="power_menu_panic_title">Panic</string>
+    <string name="power_menu_panic_summary">Trigger panic response (wipe sensitive apps)</string>
 
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Advanced restart</string>
