@@ -67,6 +67,13 @@
             android:title="@string/power_menu_devicecontrols_title"
             android:defaultValue="false"
             android:enabled="false" />
+
+        <SwitchPreferenceCompat
+            android:key="panic"
+            android:icon="@drawable/ic_panic"
+            android:title="@string/power_menu_panic_title"
+            android:summary="@string/power_menu_panic_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
