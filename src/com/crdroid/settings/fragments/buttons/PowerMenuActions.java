@@ -63,6 +63,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     private SwitchPreferenceCompat mLockDownPref;
     private SwitchPreferenceCompat mEmergencyPref;
     private SwitchPreferenceCompat mDeviceControlsPref;
+    private SwitchPreferenceCompat mPanicPref;
 
     private LineageGlobalActions mLineageGlobalActions;
 
@@ -97,6 +98,8 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                 mEmergencyPref = (SwitchPreferenceCompat) findPreference(GLOBAL_ACTION_KEY_EMERGENCY);
             } else if (action.equals(GLOBAL_ACTION_KEY_DEVICECONTROLS)) {
                 mDeviceControlsPref = findPreference(GLOBAL_ACTION_KEY_DEVICECONTROLS);
+            } else if (action.equals(GLOBAL_ACTION_KEY_PANIC)) {
+                mPanicPref = (SwitchPreferenceCompat) findPreference(GLOBAL_ACTION_KEY_PANIC);
             }
         }
 
@@ -128,6 +131,11 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         if (mEmergencyPref != null) {
             mEmergencyPref.setChecked(mLineageGlobalActions.userConfigContains(
                     GLOBAL_ACTION_KEY_EMERGENCY));
+        }
+
+        if (mPanicPref != null) {
+            mPanicPref.setChecked(mLineageGlobalActions.userConfigContains(
+                    GLOBAL_ACTION_KEY_PANIC));
         }
 
         if (mDeviceControlsPref != null) {
@@ -187,6 +195,10 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         } else if (preference == mDeviceControlsPref) {
             value = mDeviceControlsPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_DEVICECONTROLS);
+
+        } else if (preference == mPanicPref) {
+            value = mPanicPref.isChecked();
+            mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_PANIC);
 
         } else {
             return super.onPreferenceTreeClick(preference);
