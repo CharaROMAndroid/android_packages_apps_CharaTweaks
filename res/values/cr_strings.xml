@@ -405,7 +405,7 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
     <string name="theme_customization_signal_icon_title">Signal icon style</string>
     <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
-    <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
+    <string name="theme_customization_wifi_icon_title">Wi-Fi icon style</string>
     <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
     <string name="theme_customization_navbar_title">Navbar style</string>
     <string name="theme_customization_navbar_summary">Set custom navigation bar style</string>
@@ -877,9 +877,9 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="face_unlock_method_swipe">When swiping on lock screen</string>
 
     <!-- Wifi/Bluetooth auto timeout -->
-    <string name="wifi_timeout">WiFi timeout</string>
-    <string name="wifi_timeout_summary">Do not automatically turn off WiFi</string>
-    <string name="wifi_timeout_summary_auto">WiFi will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no network connected</string>
+    <string name="wifi_timeout">Wi-Fi timeout</string>
+    <string name="wifi_timeout_summary">Do not automatically turn off Wi-Fi</string>
+    <string name="wifi_timeout_summary_auto">Wi-Fi will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no network connected</string>
     <string name="bluetooth_timeout">Bluetooth timeout</string>
     <string name="bluetooth_timeout_summary">Do not automatically turn off Bluetooth</string>
     <string name="bluetooth_timeout_summary_auto">Bluetooth will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no devices connected</string>
@@ -1146,8 +1146,8 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="battery_stats_clear" translatable="false">@string/proxy_clear_text</string>
 
     <!-- WiFi Standard icon -->
-    <string name="wifi_standard_icon_title">WiFi standard</string>
-    <string name="wifi_standard_icon_summary">Display WiFi standard next to WiFi signal</string>
+    <string name="wifi_standard_icon_title">Wi-Fi standard</string>
+    <string name="wifi_standard_icon_summary">Display Wi-Fi standard next to Wi-Fi signal</string>
 
     <!-- App lock -->
     <string name="app_lock_title">App lock</string>
