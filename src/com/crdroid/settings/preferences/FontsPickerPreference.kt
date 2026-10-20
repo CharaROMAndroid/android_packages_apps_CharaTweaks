@@ -229,7 +229,13 @@ class FontsPickerPreference @JvmOverloads constructor(
                     pendingCustomFontTypeface = null
                 }
             }
+            .setOnCancelListener {
+                installer.discardPreview()
+                pendingCustomFontUri = null
+                pendingCustomFontTypeface = null
+            }
             .setNegativeButton(android.R.string.cancel) { _, _ ->
+                installer.discardPreview()
                 pendingCustomFontUri = null
                 pendingCustomFontTypeface = null
             }
