@@ -18,6 +18,7 @@ package com.crdroid.settings.preferences
 
 import android.content.Context
 import android.graphics.Typeface
+import android.graphics.fonts.FontSanitizer
 import android.graphics.fonts.FontFileUtil
 import android.graphics.fonts.FontManager
 import android.net.Uri
@@ -28,6 +29,8 @@ import android.util.Log
 import com.android.internal.statusbar.IStatusBarService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -54,8 +57,8 @@ class ExternalFontInstaller(context: Context) {
         private const val CUSTOM_FONT_FILE = "cust_font.ttf"
         private const val TEMP_PREVIEW_FONT = "preview_font.ttf"
 
-        /** Same limit as UpdatableFontDir.MAX_CUSTOM_FONT_FILE_SIZE. */
-        const val MAX_FONT_BYTES = 64L * 1024L * 1024L
+        /** Match the isolated sanitizer and framework custom-font policy. */
+        const val MAX_FONT_BYTES = 32L * 1024L * 1024L
 
         /** Family the framework registers the custom font under. */
         const val CUSTOM_FONT_FAMILY = "sans-serif"
@@ -96,6 +99,9 @@ class ExternalFontInstaller(context: Context) {
 
     private val context: Context = context.applicationContext
     private val fontManager: FontManager? = this.context.getSystemService(FontManager::class.java)
+    private val operationLock = Mutex()
+    private val previewLock = Any()
+    private var pendingPreview: FontFilePreview? = null
 
     // ---- State -----------------------------------------------------------------------------
 
@@ -112,43 +118,45 @@ class ExternalFontInstaller(context: Context) {
     // ---- Preview ---------------------------------------------------------------------------
 
     /**
-     * Copies [uri] into the cache and parses it. Returns null when the file can't be read,
-     * is larger than [MAX_FONT_BYTES] or isn't a font Android can load.
+     * Sanitizes a bounded private snapshot of [uri] before any native preview parsing.
+     * Returns null when copying, isolation, sanitation or sanitized metadata validation fails.
      */
     suspend fun inspect(uri: Uri): FontFilePreview? = withContext(Dispatchers.IO) {
-        val file = copyUriToCache(uri, TEMP_PREVIEW_FONT) ?: return@withContext null
-        val postScriptName = extractPostScriptName(file)
-        val typeface = postScriptName?.let {
-            runCatching { Typeface.createFromFile(file) }
-                .onFailure { e -> Log.e(TAG, "Failed to create preview typeface for $it", e) }
-                .getOrNull()
+        operationLock.withLock {
+            discardPreview()
+            val file = copyAndSanitize(uri) ?: return@withLock null
+            var retained = false
+            try {
+                // Neither native metadata parsing nor Typeface sees the original URI bytes.
+                val postScriptName = extractPostScriptName(file) ?: return@withLock null
+                val typeface = runCatching { Typeface.createFromFile(file) }
+                    .onFailure { Log.e(TAG, "Failed to create sanitized preview", it) }
+                    .getOrNull() ?: return@withLock null
+                val preview = FontFilePreview(file, postScriptName, queryDisplayName(uri),
+                    file.length(), typeface)
+                synchronized(previewLock) { pendingPreview = preview }
+                retained = true
+                preview
+            } finally {
+                if (!retained) file.delete()
+            }
         }
-        if (postScriptName == null || typeface == null) {
-            file.delete()
-            return@withContext null
-        }
-        FontFilePreview(
-            file = file,
-            postScriptName = postScriptName,
-            displayName = queryDisplayName(uri),
-            sizeBytes = file.length(),
-            typeface = typeface,
-        )
     }
 
-    /** Deletes the cached preview copy when the user backs out of installing it. */
-    fun discardPreview() = cleanupPreviewFont()
+    /** Deletes only this installer's owned sanitized snapshot. */
+    fun discardPreview() {
+        synchronized(previewLock) {
+            pendingPreview?.file?.delete()
+            pendingPreview = null
+        }
+    }
 
     /**
-     * Typeface of the installed custom font, for previews. Uses the private copy kept at
-     * install time, and falls back to the system's copy in /data/fonts when that is gone.
+     * Use the active system font map, never parse a legacy raw cache or /data/fonts path.
+     * Before the requested reboot this deliberately shows the currently running font.
      */
-    fun loadInstalledTypeface(): Typeface? {
-        val local = listOf(File(context.filesDir, CUSTOM_FONT_FILE), File(context.cacheDir, CUSTOM_FONT_FILE))
-            .firstOrNull { it.isFile && it.length() > 0L }
-        val file = local ?: customFontName()?.let { systemFontFile(it) }
-        return file?.let { runCatching { Typeface.createFromFile(it) }.getOrNull() }
-    }
+    fun loadInstalledTypeface(): Typeface? =
+        runCatching { Typeface.create(CUSTOM_FONT_FAMILY, Typeface.NORMAL) }.getOrNull()
 
     // ---- Install / clear -------------------------------------------------------------------
 
@@ -158,35 +166,33 @@ class ExternalFontInstaller(context: Context) {
      * restart, hence the reboot prompt.
      */
     suspend fun install(preview: FontFilePreview): InstallResult = withContext(Dispatchers.IO) {
-        val source = preview.file
-        if (!source.isFile || source.length() > MAX_FONT_BYTES) return@withContext InstallResult.Invalid
-        val postScriptName = extractPostScriptName(source) ?: return@withContext InstallResult.Invalid
-        val manager = fontManager ?: return@withContext InstallResult.Failed(RESULT_EXCEPTION)
-
-        val code = runCatching {
-            ParcelFileDescriptor.open(source, ParcelFileDescriptor.MODE_READ_ONLY).use { pfd ->
-                manager.installCustomFont(pfd)
+        operationLock.withLock {
+            val source = synchronized(previewLock) {
+                if (pendingPreview !== preview) null
+                else preview.file.also { pendingPreview = null }
+            } ?: return@withLock InstallResult.Invalid
+            try {
+                if (!source.isFile || source.length() <= 0 || source.length() > MAX_FONT_BYTES) {
+                    return@withLock InstallResult.Invalid
+                }
+                // This is the exact sanitized snapshot shown at confirmation, not a URI re-read.
+                val postScriptName = extractPostScriptName(source)
+                    ?: return@withLock InstallResult.Invalid
+                val manager = fontManager
+                    ?: return@withLock InstallResult.Failed(RESULT_EXCEPTION)
+                val code = runCatching {
+                    ParcelFileDescriptor.open(source, ParcelFileDescriptor.MODE_READ_ONLY).use {
+                        manager.installCustomFont(it)
+                    }
+                }.onFailure { Log.e(TAG, "installCustomFont failed", it) }
+                    .getOrDefault(RESULT_EXCEPTION)
+                if (code != FontManager.RESULT_SUCCESS) return@withLock InstallResult.Failed(code)
+                deleteLegacyCopies()
+                InstallResult.Success(postScriptName)
+            } finally {
+                source.delete()
             }
-        }.onFailure { Log.e(TAG, "installCustomFont failed", it) }
-            .getOrDefault(RESULT_EXCEPTION)
-        if (code != FontManager.RESULT_SUCCESS) {
-            Log.e(TAG, "installCustomFont returned $code for $postScriptName")
-            return@withContext InstallResult.Failed(code)
         }
-
-        // Private copy for the picker's preview; the system keeps its own in /data/fonts.
-        runCatching {
-            val target = File(context.filesDir, CUSTOM_FONT_FILE)
-            val staged = File(context.filesDir, "$CUSTOM_FONT_FILE.tmp")
-            source.copyTo(staged, overwrite = true)
-            if (!staged.renameTo(target)) {
-                staged.delete()
-                error("Could not move preview copy")
-            }
-        }.onFailure { Log.w(TAG, "Could not keep a preview copy of the custom font", it) }
-        File(context.cacheDir, CUSTOM_FONT_FILE).delete()
-        cleanupPreviewFont()
-        InstallResult.Success(postScriptName)
     }
 
     /**
@@ -198,9 +204,8 @@ class ExternalFontInstaller(context: Context) {
             .onFailure { Log.e(TAG, "clearCustomFont failed", it) }
             .getOrDefault(RESULT_EXCEPTION)
         if (code == FontManager.RESULT_SUCCESS) {
-            File(context.filesDir, CUSTOM_FONT_FILE).delete()
-            File(context.cacheDir, CUSTOM_FONT_FILE).delete()
-            cleanupPreviewFont()
+            deleteLegacyCopies()
+            discardPreview()
         }
         return code
     }
@@ -208,65 +213,49 @@ class ExternalFontInstaller(context: Context) {
     // ---- Internals -------------------------------------------------------------------------
 
     /**
-     * The installed custom font's file, looked up in FontManager.getFontConfig(). The config
-     * type (android.text.FontConfig) is walked by reflection: its family layout changed in
-     * Android 14 and some getters are hidden.
+     * Copy a bounded URI snapshot, then rewrite it through the isolated sanitizer.
+     * The framework client transports bytes via read-only shared memory, not a cache-file FD.
      */
-    private fun systemFontFile(postScriptName: String): File? = runCatching {
-        val config = fontManager?.fontConfig ?: return@runCatching null
-        val named = (config.call("getNamedFamilyLists") as? List<*>).orEmpty()
-            .flatMap { (it.call("getFamilies") as? List<*>).orEmpty() }
-        val legacy = (config.call("getFontFamilies") as? List<*>).orEmpty()
-        (named + legacy).asSequence()
-            .flatMap { (it.call("getFontList") as? List<*>).orEmpty().asSequence() }
-            .firstOrNull { it.call("getPostScriptName") == postScriptName }
-            ?.call("getFile") as? File
-    }.getOrNull()?.takeIf { it.isFile }
-
-    private fun Any?.call(method: String): Any? =
-        this?.javaClass?.getMethod(method)?.invoke(this)
-
-    private fun copyUriToCache(uri: Uri, fileName: String): File? {
-        val cacheFile = File(context.cacheDir, fileName)
-        val tempFile = File(context.cacheDir, "$fileName.tmp")
-        return try {
-            tempFile.delete()
-            val pfd = context.contentResolver.openFileDescriptor(uri, "r") ?: return null
-            pfd.use { descriptor ->
-                FileInputStream(descriptor.fileDescriptor).use { input ->
-                    FileOutputStream(tempFile, false).use { output ->
-                        val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
-                        var total = 0L
-                        while (true) {
-                            val read = input.read(buffer)
-                            if (read < 0) break
-                            total += read
-                            if (total > MAX_FONT_BYTES) {
-                                throw IllegalArgumentException("Font file exceeds size limit")
-                            }
-                            output.write(buffer, 0, read)
-                        }
-                        output.flush()
+    private fun copyAndSanitize(uri: Uri): File? {
+        var raw: File? = null
+        var output: File? = null
+        try {
+            raw = File.createTempFile("font-input-", ".tmp", context.cacheDir)
+            output = File.createTempFile("font-output-", ".ttf", context.cacheDir)
+            context.contentResolver.openInputStream(uri)?.use { input ->
+                FileOutputStream(raw).use { sink ->
+                    val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
+                    var total = 0L
+                    while (true) {
+                        val read = input.read(buffer)
+                        if (read < 0) break
+                        total += read
+                        require(total <= MAX_FONT_BYTES) { "Font exceeds 32 MiB" }
+                        sink.write(buffer, 0, read)
                     }
+                    require(total > 0) { "Empty font" }
+                    sink.fd.sync()
                 }
-            }
-
-            if (tempFile.length() <= 0L) {
-                tempFile.delete()
-                return null
-            }
-            if (cacheFile.exists() && !cacheFile.delete()) {
-                throw IllegalStateException("Could not replace cached font")
-            }
-            if (!tempFile.renameTo(cacheFile)) {
-                throw IllegalStateException("Could not install cached font")
-            }
-            cacheFile
+            } ?: error("Unable to read font")
+            FontSanitizer.sanitize(context, raw, output)
+            return output
         } catch (e: Exception) {
-            Log.e(TAG, "Failed to copy URI to cache", e)
-            tempFile.delete()
-            null
+            Log.e(TAG, "Could not sanitize selected font", e)
+            output?.delete()
+            return null
+        } finally {
+            raw?.delete()
         }
+    }
+
+    /** No legacy private copy is ever used as parser input. */
+    private fun deleteLegacyCopies() {
+        for (dir in listOf(context.filesDir, context.cacheDir)) {
+            File(dir, CUSTOM_FONT_FILE).delete()
+            File(dir, "$CUSTOM_FONT_FILE.tmp").delete()
+        }
+        File(context.cacheDir, TEMP_PREVIEW_FONT).delete()
+        File(context.cacheDir, "$TEMP_PREVIEW_FONT.tmp").delete()
     }
 
     private fun queryDisplayName(uri: Uri): String? = runCatching {
@@ -288,12 +277,4 @@ class ExternalFontInstaller(context: Context) {
         Log.e(TAG, "Failed to inspect font file", it)
     }.getOrNull()
 
-    private fun cleanupPreviewFont() {
-        try {
-            val previewFile = File(context.cacheDir, TEMP_PREVIEW_FONT)
-            if (previewFile.exists()) previewFile.delete()
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to cleanup preview font", e)
-        }
-    }
 }

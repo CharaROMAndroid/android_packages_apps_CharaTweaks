@@ -1877,5 +1877,6 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="boot_animation_applied">Boot animation applied</string>
     <string name="boot_animation_no_preview">No preview available</string>
     <string name="boot_animation_style_unknown">Unknown</string>
+    <string name="font_error_sanitization">Could not safely load this font. Choose a valid TTF or OTF file no larger than 32 MiB. Font collections, WOFF and WOFF2 are not supported.</string>
 </resources>
 

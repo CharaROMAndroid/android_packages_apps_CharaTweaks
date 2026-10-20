@@ -76,7 +76,7 @@ class FontPicker : SettingsPreferenceFragment() {
 
     companion object {
         private val FONT_MIME_TYPES = arrayOf(
-            "font/ttf", "font/otf", "font/sfnt", "font/collection",
+            "font/ttf", "font/otf", "font/sfnt",
             "application/x-font-ttf", "application/x-font-otf", "application/font-sfnt",
             "application/vnd.ms-opentype", "application/octet-stream",
         )
@@ -126,6 +126,7 @@ class FontPickerViewModel(application: Application) : AndroidViewModel(applicati
     private val repo = FontRepository(application)
     private val installer = ExternalFontInstaller(application)
     private val tracker = FontRestartTracker(application)
+    @Volatile private var cleared = false
 
     internal var options by mutableStateOf<List<FontOption>>(emptyList())
         private set
@@ -235,8 +236,10 @@ class FontPickerViewModel(application: Application) : AndroidViewModel(applicati
         if (FontOps.busy != null) return
         FontOps.run(FontBusy.Reading) {
             val preview = installer.inspect(uri)
-            if (preview == null) {
-                FontOps.toast(app, R.string.toast_invalid_font_file)
+            if (cleared) {
+                installer.discardPreview()
+            } else if (preview == null) {
+                dialog = FontDialog.Error(app.getString(R.string.font_error_sanitization))
             } else {
                 dialog = FontDialog.Install(preview)
             }
@@ -262,7 +265,9 @@ class FontPickerViewModel(application: Application) : AndroidViewModel(applicati
                     if (!overlayReset) FontOps.toast(app, R.string.font_overlay_reset_failed)
                     if (rebootNow) ExternalFontInstaller.rebootDevice()
                 }
-                InstallResult.Invalid -> FontOps.toast(app, R.string.toast_invalid_font_file)
+                InstallResult.Invalid -> dialog = FontDialog.Error(
+                    app.getString(R.string.font_error_sanitization)
+                )
                 is InstallResult.Failed -> dialog = FontDialog.Error(
                     if (result.code == ExternalFontInstaller.RESULT_EXCEPTION) {
                         app.getString(R.string.font_install_failed, result.code)
@@ -272,6 +277,12 @@ class FontPickerViewModel(application: Application) : AndroidViewModel(applicati
                 )
             }
         }
+    }
+
+    override fun onCleared() {
+        cleared = true
+        installer.discardPreview()
+        super.onCleared()
     }
 
     // ---- Restart ---------------------------------------------------------------------------
