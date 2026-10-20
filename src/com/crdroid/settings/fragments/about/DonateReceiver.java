@@ -26,21 +26,28 @@ public class DonateReceiver extends BroadcastReceiver {
     private static final String TAG = "DonateReceiver";
 
     public static final String DONATE_LAST_CHECKED = "pref_donate_checked_in";
+    public static final String DONATE_REMINDERS = "pref_donate_reminders";
 
-    private static final String DONATE_CHANNEL_ID = "donation_channel";
+    private static final String OLD_DONATE_CHANNEL_ID = "donation_channel";
+    private static final String DONATE_CHANNEL_ID = "donation_channel_quiet";
     private static final int DONATE_NOTIFICATION_ID = 8989;
     private static final int REQ_ALARM = 7611;
 
     public static final long COOLDOWN_MIN = 30 * 24 * 60; // Monthly reminder
-    public static final long INITIAL_DELAY_MIN = 30; // 30-minute after first boot
-    public static final long REPEAT_DELAY_MIN = 60; // Repeat after 1 hour if not opened
+    public static final long INITIAL_DELAY_MIN = 7 * 24 * 60; // After a week
 
     private static final String ACTION_DONATE_NUDGE = "com.crdroid.settings.action.DONATE_NUDGE";
- 
+
     @Override
     public void onReceive(Context ctx, Intent intent) {
         final String action = intent != null ? intent.getAction() : null;
         if (action == null) return;
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+        if (!prefs.getBoolean(DONATE_REMINDERS, true)) {
+            Log.d(TAG, "Donation reminders disabled");
+            return;
+        }
 
         UserManager um = ctx.getSystemService(UserManager.class);
         if (um == null) {
@@ -93,12 +100,17 @@ public class DonateReceiver extends BroadcastReceiver {
         );
         long triggerAt = SystemClock.elapsedRealtime() + delayMinutes * 60_000L;
         am.cancel(pi);
-        am.setExactAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAt, pi);
+        am.setAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME, triggerAt, pi);
     }
 
     private void showDonateNotification(Context ctx) {
         NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
         nm.cancel(DONATE_NOTIFICATION_ID);
+
+        // Count as seen once shown, even if dismissed
+        PreferenceManager.getDefaultSharedPreferences(ctx).edit()
+                .putLong(DONATE_LAST_CHECKED, System.currentTimeMillis())
+                .apply();
 
         createChannelIfNeeded(ctx);
 
@@ -114,19 +126,21 @@ public class DonateReceiver extends BroadcastReceiver {
                 .setContentIntent(contentPi)
                 .setAutoCancel(true)
                 .setOnlyAlertOnce(true)
-                .setPriority(NotificationCompat.PRIORITY_HIGH);
+                .setSilent(true)
+                .setPriority(NotificationCompat.PRIORITY_LOW);
 
         nm.notify(DONATE_NOTIFICATION_ID, b.build());
 
-        scheduleNext(ctx, REPEAT_DELAY_MIN);
+        scheduleNext(ctx, COOLDOWN_MIN);
     }
 
     private void createChannelIfNeeded(Context ctx) {
         NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+        nm.deleteNotificationChannel(OLD_DONATE_CHANNEL_ID);
         NotificationChannel ch = new NotificationChannel(
                 DONATE_CHANNEL_ID,
                 ctx.getString(R.string.crdroid_channel_name),
-                NotificationManager.IMPORTANCE_HIGH
+                NotificationManager.IMPORTANCE_LOW
         );
         ch.setDescription(ctx.getString(R.string.crdroid_channel_desc));
         nm.createNotificationChannel(ch);
