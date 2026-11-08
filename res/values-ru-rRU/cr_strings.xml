@@ -1628,4 +1628,5 @@
     <string name="shade_color_style_aosp">Цвета Android</string>
     <string name="shade_color_style_glass">Прозрачная матовая панель, сквозь которую видны обои</string>
     <string name="shade_color_style_tinted">Панель, тонированная в акцентный цвет, с размытием и без</string>
+    <string name="gs_footer_body">Выбранная игра видит идентификатор устройства в названиях полей. Игры перезапускаются при изменении их конфигурации. Некоторые игры используют эту функцию, чтобы повысить частоту кадров или настройки графики.</string>
 </resources>

@@ -1620,4 +1620,5 @@ Niewielka darowizna pomaga utrzymać ten projekt i crDroid, ulepszać je. Możes
     <string name="shade_color_style_aosp">Domyślne kolory Android</string>
     <string name="shade_color_style_glass">Przezroczysty, matowy panel, przez który prześwituje tapeta</string>
     <string name="shade_color_style_tinted">Panel w kolorze akcentującym, z efektem rozmycia lub bez</string>
+    <string name="gs_footer_body">W wybranej grze w polach „Build” widoczna jest identyfikacja wybranego urządzenia. Gry uruchamiają się ponownie po zmianie ich konfiguracji. Niektóre gry wykorzystują tę funkcję do odblokowania wyższych częstotliwości odświeżania lub lepszych ustawień graficznych.</string>
 </resources>
