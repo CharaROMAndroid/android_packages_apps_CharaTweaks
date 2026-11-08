@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: BaikalOS Project, Sergei Vasilev <svasiliev22@yandex.ru>
  * SPDX-License-Identifier: Apache-2.0
  *
- * UI design derived from BaikalOS (BaikalSettings) app privacy / app performance screens.
+ * UI design derived from BaikalOS (BaikalSettings) app privacy screen.
  */
 
 @file:OptIn(ExperimentalMaterial3Api::class)
@@ -49,6 +49,7 @@ import com.android.settingslib.spa.framework.theme.SettingsTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -65,6 +66,9 @@ class AppListHiding : SettingsPreferenceFragment() {
 
     internal class HideUiState {
         var loading by mutableStateOf(true)
+        /** Stored value is invalid or too large; toggles stay disabled so it is not clobbered. */
+        var invalid by mutableStateOf(false)
+        var error by mutableStateOf(false)
         var query by mutableStateOf("")
         var showSystem by mutableStateOf(false)
         val apps = mutableStateListOf<AppListEntry>()
@@ -73,6 +77,7 @@ class AppListHiding : SettingsPreferenceFragment() {
     private val ui = HideUiState()
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
     private var hidden = mutableSetOf<String>()
+    private var loadJob: Job? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {}
 
@@ -102,6 +107,11 @@ class AppListHiding : SettingsPreferenceFragment() {
         load()
     }
 
+    override fun onPause() {
+        loadJob?.cancel()
+        super.onPause()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         scope.cancel()
@@ -110,26 +120,31 @@ class AppListHiding : SettingsPreferenceFragment() {
     override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.CRDROID_SETTINGS
 
     private fun load() {
-        scope.launch {
+        loadJob?.cancel()
+        ui.loading = true
+        loadJob = scope.launch {
             val ctx = requireContext()
             val pm = ctx.packageManager
-            val (current, entries) = withContext(Dispatchers.IO) {
+            val (parsed, entries) = withContext(Dispatchers.IO) {
                 val set = AppPolicyStore.parseHiding(
                     Settings.Secure.getString(ctx.contentResolver, AppPolicyStore.HIDING_KEY))
-                set to filterInstalledApps(pm = pm, showSystem = true, targeted = set)
+                val current = set ?: emptySet()
+                set to filterInstalledApps(pm = pm, showSystem = true, targeted = current)
                     .map { app ->
                         AppListEntry(
                             packageName = app.packageName,
                             label = pm.getApplicationLabel(app).toString(),
                             icon = runCatching { pm.getApplicationIcon(app) }.getOrNull(),
                             isSystem = app.flags and ApplicationInfo.FLAG_SYSTEM != 0,
-                            isSelected = app.packageName in set,
+                            isSelected = app.packageName in current,
                         )
                     }
                     .sortedWith(compareBy({ !it.isSelected },
                         { it.label.lowercase(Locale.getDefault()) }))
             }
-            hidden = current.toMutableSet()
+            hidden = (parsed ?: emptySet()).toMutableSet()
+            ui.invalid = parsed == null
+            ui.error = false
             ui.apps.clear()
             ui.apps.addAll(entries)
             ui.loading = false
@@ -137,10 +152,16 @@ class AppListHiding : SettingsPreferenceFragment() {
     }
 
     private fun setHidden(packageName: String, value: Boolean) {
-        if (value) hidden.add(packageName) else hidden.remove(packageName)
+        if (ui.loading || ui.invalid) return
+        val next = hidden.toMutableSet()
+        if (value) next.add(packageName) else next.remove(packageName)
         // null removes the key entirely, which is the "nothing hidden" default.
-        Settings.Secure.putString(requireContext().contentResolver,
-            AppPolicyStore.HIDING_KEY, AppPolicyStore.serializeHiding(hidden))
+        val ok = AppPolicyStore.fits(next) && Settings.Secure.putString(
+            requireContext().contentResolver,
+            AppPolicyStore.HIDING_KEY, AppPolicyStore.serializeHiding(next))
+        ui.error = !ok
+        if (!ok) return // UI keeps showing the last persisted state
+        hidden = next
         val index = ui.apps.indexOfFirst { it.packageName == packageName }
         if (index >= 0) ui.apps[index] = ui.apps[index].copy(isSelected = value)
     }
@@ -170,6 +191,16 @@ private fun AppListHidingContent(
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(horizontal = 4.dp),
         )
+        if (state.invalid || state.error) {
+            Spacer(Modifier.height(8.dp))
+            Text(
+                stringResource(if (state.invalid) R.string.app_list_hiding_invalid
+                    else R.string.app_list_hiding_write_failed),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.error,
+                modifier = Modifier.padding(horizontal = 4.dp),
+            )
+        }
         Spacer(Modifier.height(16.dp))
         AppPickerSearchField(query = state.query, onQueryChange = { state.query = it })
         Spacer(Modifier.height(8.dp))
@@ -201,6 +232,7 @@ private fun AppListHidingContent(
                 shown.forEachIndexed { index, app ->
                     Surface(
                         onClick = { onToggle(app.packageName, !app.isSelected) },
+                        enabled = !state.invalid,
                         shape = SpoofShapes.forIndex(index, shown.size),
                         color = MaterialTheme.colorScheme.surfaceBright,
                         modifier = Modifier.fillMaxWidth(),
@@ -223,6 +255,7 @@ private fun AppListHidingContent(
                             CheckCloseSwitch(
                                 checked = app.isSelected,
                                 onCheckedChange = { onToggle(app.packageName, it) },
+                                enabled = !state.invalid,
                             )
                         }
                     }
