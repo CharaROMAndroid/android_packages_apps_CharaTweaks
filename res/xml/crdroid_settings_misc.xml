@@ -42,6 +42,14 @@
         android:summary="@string/game_spoofing_summary"
         android:fragment="com.crdroid.settings.fragments.misc.GameSpoofing" />
 
+    <!-- App list hiding -->
+    <Preference
+        android:key="app_list_hiding"
+        android:icon="@drawable/ic_unlock_outline"
+        android:title="@string/app_list_hiding_title"
+        android:summary="@string/app_list_hiding_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.AppListHiding" />
+
     <!-- Gaming mode -->
     <Preference
         android:key="gaming_mode"

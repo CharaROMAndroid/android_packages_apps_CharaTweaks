@@ -1925,5 +1925,22 @@ A small donation helps keep this project, and crDroid, alive and improving. You 
     <string name="battery_saver_dark_theme_summary">Dark theme turns on and stays on while Battery Saver is on. Saves the most battery on OLED screens.</string>
     <!-- Not shown in the UI; describes the preference for the settings API -->
     <string name="battery_saver_dark_theme_purpose">Controls whether Battery Saver turns on dark theme and prevents changing it until Battery Saver turns off.</string>
+
+    <!-- App list hiding / app performance (BaikalOS-derived UI) -->
+    <string name="app_list_hiding_title">App list hiding</string>
+    <string name="app_list_hiding_summary">Stop chosen apps from seeing your other installed apps</string>
+    <string name="app_list_hiding_count">%1$d apps restricted</string>
+    <string name="app_list_hiding_switch_title">Hide other user-installed apps</string>
+    <string name="app_list_hiding_row_summary">Prevent this app from discovering other non-system apps. System apps and apps sharing its UID remain visible. May break app integrations.</string>
+    <string name="app_list_hiding_footer">This restricts what the selected app can discover about other non-system apps. It does not hide the app from the launcher and does not hide it globally. System apps and the app itself stay visible. If several packages share a user ID with the selected app, all of them get the same restriction. Applies to the current user only.</string>
+    <string name="app_performance_title">App performance</string>
+    <string name="app_performance_summary">Choose a performance mode for each app</string>
+    <string name="app_performance_count">%1$d apps with a custom mode</string>
+    <string name="app_performance_mode_default">Default</string>
+    <string name="app_performance_mode_power_save">Power save</string>
+    <string name="app_performance_mode_balanced">Balanced</string>
+    <string name="app_performance_mode_performance">Performance</string>
+    <string name="app_performance_unsupported">Not supported yet: this device has no performance backend for this mode.</string>
+    <string name="app_performance_footer">Only Default is available right now because this device has no hardware performance backend yet. Other modes are shown disabled. Default leaves the app untouched. Applies to the current user only.</string>
 </resources>
 
