@@ -16,7 +16,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">Налаштування crDroid</string>
     <string name="crdroid_settings_summary">Тут відбувається магія</string>
     <string name="reset_settings_title">Скинути налаштування</string>
     <!-- Personalization Categories -->
