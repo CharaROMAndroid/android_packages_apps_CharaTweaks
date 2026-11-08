@@ -111,17 +111,20 @@ internal class FontRepository(context: Context) {
 
     /**
      * Switches to [newPackage]. With [fromCustom] the custom font is first cleared from the
-     * system font configuration. Blocking. Returns FontManager.RESULT_SUCCESS or the code of
-     * the step that failed ([ExternalFontInstaller.RESULT_EXCEPTION] for the overlay).
+     * system font configuration. Blocking. Retains whether clearing succeeded even if the
+     * subsequent overlay switch fails, because that partial change still needs a reboot.
      */
-    fun applyOverlay(newPackage: String, fromCustom: Boolean): Int {
+    data class ApplyResult(val code: Int, val customCleared: Boolean)
+
+    fun applyOverlay(newPackage: String, fromCustom: Boolean): ApplyResult {
         if (fromCustom) {
             val code = installer.clearCustomFont()
-            if (code != FontManager.RESULT_SUCCESS) return code
+            if (code != FontManager.RESULT_SUCCESS) return ApplyResult(code, false)
             setCustomFontName(null)
         }
-        return if (setOverlay(newPackage)) FontManager.RESULT_SUCCESS
+        val code = if (setOverlay(newPackage)) FontManager.RESULT_SUCCESS
         else ExternalFontInstaller.RESULT_EXCEPTION
+        return ApplyResult(code, fromCustom)
     }
 
     /**

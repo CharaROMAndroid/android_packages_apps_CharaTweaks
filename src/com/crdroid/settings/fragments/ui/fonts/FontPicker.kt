@@ -206,11 +206,21 @@ class FontPickerViewModel(application: Application) : AndroidViewModel(applicati
             val previous = tracker.pending()
             // Recorded first: the overlay change below recreates this activity.
             tracker.markPending(kind, option.label)
-            val code = withContext(Dispatchers.IO) {
+            val result = withContext(Dispatchers.IO) {
                 repo.applyOverlay(option.packageName, fromCustom)
             }
+            val code = result.code
             if (code != FontManager.RESULT_SUCCESS) {
-                tracker.restore(previous)
+                if (result.customCleared) {
+                    // The custom font is already gone, even though the overlay switch failed.
+                    val activeLabel = withContext(Dispatchers.IO) {
+                        repo.label(repo.appliedPackage())
+                    }
+                    tracker.markPending(RestartKind.REBOOT, activeLabel)
+                    refresh()
+                } else {
+                    tracker.restore(previous)
+                }
                 dialog = FontDialog.Error(
                     if (code == ExternalFontInstaller.RESULT_EXCEPTION) {
                         app.getString(R.string.toast_failed_apply_font)
