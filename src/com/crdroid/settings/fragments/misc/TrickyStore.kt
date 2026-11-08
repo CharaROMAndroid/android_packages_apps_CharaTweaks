@@ -22,6 +22,7 @@ import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
 import com.android.settings.core.SubSettingLauncher
 import com.android.settingslib.spa.framework.theme.SettingsTheme
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -31,7 +32,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
-import java.nio.charset.StandardCharsets
 import java.text.DateFormat
 import java.util.Date
 import java.util.concurrent.TimeUnit
@@ -53,29 +53,65 @@ class TrickyStore : SettingsPreferenceFragment() {
     private val keyboxPicker = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        if (result.resultCode != Activity.RESULT_OK) return@registerForActivityResult
-        result.data?.data?.let { uri ->
-            try {
-                val bytes = requireContext().contentResolver.openInputStream(uri)
-                    ?.use { it.readBytes() } ?: ByteArray(0)
-                importKeybox(bytes.toString(Charsets.UTF_8))
-            } catch (e: Exception) {
-                toast(getString(R.string.ts_failed, e.message ?: ""))
-            }
+        if (result.resultCode == Activity.RESULT_OK) {
+            result.data?.data?.let { importDocument(it, keybox = true) }
         }
     }
 
     private val targetPicker = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        if (result.resultCode != Activity.RESULT_OK) return@registerForActivityResult
-        result.data?.data?.let { uri ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            result.data?.data?.let { importDocument(it, keybox = false) }
+        }
+    }
+
+    private fun importDocument(uri: android.net.Uri, keybox: Boolean) {
+        val resolver = requireContext().contentResolver
+        scope.launch {
             try {
-                val text = requireContext().contentResolver.openInputStream(uri)
-                    ?.use { it.readBytes().toString(StandardCharsets.UTF_8) } ?: ""
-                importTargets(text)
+                withContext(Dispatchers.IO) {
+                    val bytes = TrickyStoreImport.readBounded(
+                        resolver.openInputStream(uri),
+                        if (keybox) TrickyStoreImport.KEYBOX_LIMIT * 2
+                        else TrickyStoreImport.TARGET_LIMIT
+                    )
+                    val value = if (keybox) {
+                        // Preserve raw XML and base64 export support, but decode UTF-8 strictly.
+                        val payload = TrickyStoreImport.decode(bytes).trim()
+                        val xml = if (payload.startsWith("<") || payload.startsWith("\uFEFF<")) {
+                            payload
+                        } else {
+                            TrickyStoreImport.decode(Base64.decode(payload, Base64.DEFAULT))
+                        }.removePrefix("\uFEFF").trim()
+                        val xmlBytes = xml.toByteArray(Charsets.UTF_8)
+                        TrickyStoreImport.validateKeybox(xmlBytes)
+                        Base64.encodeToString(xmlBytes, Base64.NO_WRAP)
+                    } else {
+                        TrickyStoreImport.validateTargets(bytes)
+                    }
+                    check(Settings.Secure.putString(
+                        resolver, if (keybox) KEYBOX_KEY else TARGET_KEY, value
+                    )) { "Unable to save configuration" }
+                }
+                if (isAdded) {
+                    if (keybox) {
+                        checkJob?.cancel()
+                        ui.checking = false
+                        stopGmsFamily()
+                    }
+                    toast(getString(if (keybox) R.string.ts_keybox_imported
+                        else R.string.ts_target_list_imported))
+                    refreshStatus()
+                    if (keybox) {
+                        offerWipeAfterCheck = true
+                        runStatusCheck(userInitiated = true)
+                    }
+                }
+            } catch (e: CancellationException) {
+                throw e
             } catch (e: Exception) {
-                toast(getString(R.string.ts_failed, e.message ?: ""))
+                if (isAdded) toast(getString(R.string.ts_failed, e.message ?: ""))
             }
         }
     }
@@ -117,14 +153,26 @@ class TrickyStore : SettingsPreferenceFragment() {
             if (value.isNotEmpty() && !isValidPatchContent(value)) {
                 return getString(R.string.ts_invalid_patch)
             }
-            Settings.Secure.putString(requireContext().contentResolver, PATCH_KEY, value)
-            refreshStatus()
-            return null
+            return try {
+                check(Settings.Secure.putString(requireContext().contentResolver, PATCH_KEY, value)) {
+                    "Unable to save patch date"
+                }
+                refreshStatus()
+                null
+            } catch (e: Exception) {
+                getString(R.string.ts_failed, e.message ?: "")
+            }
         }
 
         override fun onDeletePatch() {
-            Settings.Secure.putString(requireContext().contentResolver, PATCH_KEY, "")
-            refreshStatus()
+            try {
+                check(Settings.Secure.putString(requireContext().contentResolver, PATCH_KEY, "")) {
+                    "Unable to delete patch date"
+                }
+                refreshStatus()
+            } catch (e: Exception) {
+                toast(getString(R.string.ts_failed, e.message ?: ""))
+            }
         }
 
         override fun onFlaggedKeep() {
@@ -201,35 +249,20 @@ class TrickyStore : SettingsPreferenceFragment() {
         keyboxPicker.launch(intent)
     }
 
-    private fun importKeybox(content: String) {
-        // Accept raw XML or a base64 export; store base64 of the XML exactly once, without a
-        // BOM, since the framework decodes a single base64 layer and expects "<" first.
-        val xml = KeyboxInspector.decode(content)?.removePrefix("\uFEFF")?.trim()
-        if (xml == null) {
-            toast(getString(R.string.ts_keybox_invalid, getString(R.string.ts_keybox_not_xml)))
-            return
-        }
-        KeyboxInspector.validateForImport(xml)?.let { problem ->
-            toast(getString(R.string.ts_keybox_invalid, problem))
-            return
-        }
-        val encoded = Base64.encodeToString(xml.toByteArray(Charsets.UTF_8), Base64.NO_WRAP)
-        Settings.Secure.putString(requireContext().contentResolver, KEYBOX_KEY, encoded)
-        stopGmsFamily()
-        toast(getString(R.string.ts_keybox_imported))
-        refreshStatus()
-        offerWipeAfterCheck = true
-        runStatusCheck(userInitiated = true)
-    }
-
     private fun deleteKeybox() {
-        checkJob?.cancel()
-        ui.checking = false
-        Settings.Secure.putString(requireContext().contentResolver, KEYBOX_KEY, "")
-        KeyboxInspector.clearReport(requireContext())
-        stopGmsFamily()
-        toast(getString(R.string.ts_keybox_deleted))
-        refreshStatus()
+        try {
+            check(Settings.Secure.putString(requireContext().contentResolver, KEYBOX_KEY, "")) {
+                "Unable to delete keybox"
+            }
+            checkJob?.cancel()
+            ui.checking = false
+            KeyboxInspector.clearReport(requireContext())
+            stopGmsFamily()
+            toast(getString(R.string.ts_keybox_deleted))
+            refreshStatus()
+        } catch (e: Exception) {
+            toast(getString(R.string.ts_failed, e.message ?: ""))
+        }
     }
 
     // ---- Status check ----------------------------------------------------------------------
@@ -434,47 +467,6 @@ class TrickyStore : SettingsPreferenceFragment() {
             counts[TargetMode.CERT_GEN]?.let { add(getString(R.string.ts_verification_cert_count, it)) }
             counts[TargetMode.SKIP]?.let { add(getString(R.string.ts_verification_skip_count, it)) }
         }.joinToString(" \u00b7 ")
-    }
-
-    // ---- Target list import ----------------------------------------------------------------
-
-    /**
-     * Accepts the framework's two target formats: one package per line with an optional
-     * mode suffix (`?` leaf, `!` cert, `-` skip, `#` comments), or a JSON array of
-     * {"package", "mode"} objects. Anything else is refused instead of being stored.
-     */
-    private fun importTargets(raw: String) {
-        val text = raw.removePrefix("\uFEFF").trim()
-        if (text.isEmpty()) {
-            toast(getString(R.string.ts_target_list_invalid, "-"))
-            return
-        }
-        if (text.startsWith("[")) {
-            try {
-                val array = JSONArray(text)
-                for (i in 0 until array.length()) {
-                    val obj = array.get(i) as JSONObject
-                    val pkg = obj.getString("package")
-                    require(PACKAGE_REGEX.matches(pkg)) { pkg }
-                    obj.optString("mode").takeIf { it.isNotEmpty() }?.let { mode ->
-                        require(mode.uppercase() in VALID_TARGET_MODES) { "mode: $mode" }
-                    }
-                }
-            } catch (e: Exception) {
-                toast(getString(R.string.ts_target_list_invalid, e.message ?: "JSON"))
-                return
-            }
-        } else {
-            val bad = text.lines().map { it.trim() }
-                .firstOrNull { it.isNotEmpty() && !it.startsWith("#") && !TARGET_LINE_REGEX.matches(it) }
-            if (bad != null) {
-                toast(getString(R.string.ts_target_list_invalid, bad))
-                return
-            }
-        }
-        Settings.Secure.putString(requireContext().contentResolver, TARGET_KEY, text)
-        toast(getString(R.string.ts_target_list_imported))
-        refreshStatus()
     }
 
     // ---- Helpers ---------------------------------------------------------------------------
